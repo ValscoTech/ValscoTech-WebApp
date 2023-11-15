@@ -9,22 +9,38 @@ import { Helmet } from "react-helmet-async";
 const BlogBody = (currentElement, authenticated) => {
   const { author, title, postText, id, ImgSrc } = currentElement;
   const deleteBlog = async (id, ImgSrc) => {
-    const desertRef = ref(storage, ImgSrc);
-    deleteObject(desertRef)
-      .then(async () => {
-        const blogdelete = doc(db, "blogPosts", id);
-        await deleteDoc(blogdelete);
-        window.location.reload(false);
-        localStorage.setItem(
-          "alertMsg",
-          "Your Blog has been successfully deleted!"
-        );
-        localStorage.setItem("alertColor", "lightgreen");
-      })
-      .catch((error) => {
-        localStorage.setItem("alertMsg", error);
-        localStorage.setItem("alertColor", "red");
-      });
+    if (ImgSrc) {
+      const desertRef = ref(storage, ImgSrc);
+      deleteObject(desertRef)
+        .then(async () => {
+          const blogdelete = doc(db, "blogPosts", id);
+          await deleteDoc(blogdelete);
+          localStorage.setItem(
+            "alertMsg",
+            "Your Blog has been successfully deleted!"
+          );
+          localStorage.setItem("alertColor", "lightgreen");
+        })
+        .catch((error) => {
+          localStorage.setItem("alertMsg", error);
+          localStorage.setItem("alertColor", "red");
+        });
+    } else {
+      const blogdelete = doc(db, "blogPosts", id);
+      await deleteDoc(blogdelete)
+        .then(() => {
+          localStorage.setItem(
+            "alertMsg",
+            "Your Blog has been successfully deleted!"
+          );
+          localStorage.setItem("alertColor", "lightgreen");
+        })
+        .catch((error) => {
+          localStorage.setItem("alertMsg", error);
+          localStorage.setItem("alertColor", "red");
+        });
+    }
+    window.location.reload(false);
   };
 
   return (
