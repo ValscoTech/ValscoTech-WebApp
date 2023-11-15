@@ -1,0 +1,171 @@
+.navbar {
+    background: #f7f7fa;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    box-shadow: 0px 4px 25px 1px rgba(0, 0, 0, 0.25);
+}
+
+
+.image {
+    border-radius: 50%;
+    height: 50px;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-family: 'Courier New';
+    font-weight: 300;
+    padding: 0 2rem;
+}
+
+.container {
+    z-index: 1;
+    width: 100%;
+}
+
+.navbar-logo {
+    justify-self: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-icon {
+    margin-right: 0.5rem;
+    height: 64px;
+    background: transparent;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    text-align: center;
+    gap: 2vw;
+}
+
+.nav-item {
+    padding: 1rem;
+    border-radius: 5px;
+    width: max-content;
+}
+
+.nav-item:hover {
+    font-weight: 700;
+    background: linear-gradient(90deg, hsla(207, 96%, 69%, 1) 0%, hsla(220, 97%, 64%, 1) 0%, hsla(192, 89%, 63%, 1) 100%);
+}
+
+.nav-item:hover a {
+    color: white;
+}
+
+.nav-links {
+    color: #0a0707;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0rem 1rem;
+    height: 100%;
+}
+
+.activated {
+    color: #09bef0;
+}
+
+.fa-bars {
+    color: #fff;
+}
+
+.menu-icon {
+    display: none;
+}
+
+.btn {
+    background-color: #09bef0;
+    width: 100%;
+    padding: 2px;
+}
+
+.pro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20rem;
+
+
+}
+
+@media screen and (max-width: 960px) {
+    .NavbarItems {
+        position: relative;
+    }
+
+    .nav-menu {
+        background-color: hsla(210.8, 44%, 67.1%, 0.44);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 1rem;
+        width: 60%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        margin-top: 80px;
+        opacity: 1;
+        padding-bottom: 1rem;
+        padding-right: 1rem;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .nav-menu.active {
+        left: 0;
+        opacity: 1;
+        transition: all 0.6s ease;
+        z-index: 1;
+    }
+
+    .nav-links {
+        font-weight: 600;
+        text-align: left;
+        padding: 0;
+        display: inline;
+    }
+
+    .nav-item {
+        padding: 1rem;
+        margin: 0;
+        width: 100%;
+        background-color: hsla(0, 0%, 100%, .436);
+    }
+
+    .nav-item:hover,
+    .nav-links:hover .nav-item {
+        padding: 1rem;
+        border: 2px solid black;
+    }
+
+    .nav-item:hover a,
+    .nav-links:hover a {
+        margin-left: 1.5rem;
+    }
+
+    .menu-icon {
+        display: block;
+        font-size: 1rem;
+        cursor: pointer;
+        z-index: 9999;
+    }
+}

@@ -1,0 +1,84 @@
+#valsco-logo {
+    margin: auto;
+}
+
+.swiperslide {
+    max-width: 50%;
+}
+
+.swiper-slide-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    margin: 30px;
+    padding: 20px;
+    padding-top: 40px;
+    box-shadow: 0px 0px 10px 2px lightgrey;
+    gap: 1rem;
+}
+
+.swiper-slide-title {
+    font-size: 1.5rem;
+}
+
+.swiper-slide-author {
+    font-weight: bold;
+}
+
+.swiper-slide-desc {
+    text-align: center;
+}
+
+.swiper-slide-btn-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swipe-slide-btn {
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    background: rgba(44, 16, 225, 0.682);
+    margin: 4px 1rem;
+    color: white;
+    border: 1px solid white;
+    text-align: center;
+}
+
+.swipe-slide-btn:hover {
+    background: rgba(76, 202, 230, 0.823);
+    border: 1px solid black;
+    color: black;
+}
+
+.slider-instruct {
+    text-align: center;
+}
+
+@media screen and (max-width: 690px) {
+    .swiperslide {
+        max-width: 80%;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .swiper-slide-title {
+        font-size: 1.1rem;
+    }
+
+    .swiper-slide-desc {
+        font-size: 0.8rem;
+    }
+
+    .swiperslide {
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .swiperslide {
+        max-width: 70%;
+    }
+}
