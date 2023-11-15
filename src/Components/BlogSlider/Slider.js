@@ -28,16 +28,27 @@ const Slider = ({ authenticated }) => {
   }
 
   const deleteBlog = async (id, ImgSrc) => {
-    const desertRef = ref(storage, ImgSrc);
-    deleteObject(desertRef)
-      .then(async () => {
-        const blogdelete = doc(db, "blogPosts", id);
-        await deleteDoc(blogdelete);
-        window.location.reload(false);
-      })
-      .catch((error) => {
-        alert(error);
-      });
+    if (ImgSrc) {
+      const desertRef = ref(storage, ImgSrc);
+      deleteObject(desertRef)
+        .then(async () => {
+          const blogdelete = doc(db, "blogPosts", id);
+          await deleteDoc(blogdelete);
+          window.location.reload(false);
+        })
+        .catch((error) => {
+          alert(error);
+        });
+    } else {
+      const blogdelete = doc(db, "blogPosts", id);
+      await deleteDoc(blogdelete)
+        .then(() => {
+          window.location.reload(false);
+        })
+        .catch((error) => {
+          alert(error);
+        });
+    }
   };
 
   return (
