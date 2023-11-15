@@ -146,9 +146,8 @@
 }
 
 .Blog_post_footer h2 {
-    padding: 3% 7%;
+    padding: 3rem 7%;
     font-size: 3rem;
-    font-weight: 700;
     width: 95%;
 }
 
@@ -198,8 +197,7 @@
 
     .Blog_post_footer h2 {
         font-size: 2rem;
-        font-weight: 700;
-        padding: 3% 5%;
+        padding: 3rem 5%;
     }
 
     .blog_body pre {
