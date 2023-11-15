@@ -50,37 +50,60 @@ const BlogPage = (props) => {
     );
   }
   const deleteBlog = async (id) => {
-    const desertRef = ref(storage, ImgSrc);
     setTemp(true);
-    deleteObject(desertRef)
-      .then(async () => {
-        const blogdelete = doc(db, "blogPosts", id);
-        await deleteDoc(blogdelete);
-        setTemp(false);
-        navigate("/BlogHome");
-        window.location.reload(false);
-        localStorage.setItem(
-          "alertMsg",
-          "Your Blog has been successfully deleted!"
-        );
-        localStorage.setItem("alertColor", "lightgreen");
-        props.setAlertMsg("Your Blog has been successfully deleted!");
-        props.setAlertColor("lightgreen");
-      })
-      .catch((error) => {
-        localStorage.setItem("alertMsg", error);
-        props.setAlertMsg(error);
-        localStorage.setItem("alertColor", "red");
-        props.setAlertColor("red");
-      });
+    if (ImgSrc) {
+      const desertRef = ref(storage, ImgSrc);
+      deleteObject(desertRef)
+        .then(async () => {
+          const blogdelete = doc(db, "blogPosts", id);
+          await deleteDoc(blogdelete);
+          setTemp(false);
+          navigate("/BlogHome");
+          window.location.reload(false);
+          localStorage.setItem(
+            "alertMsg",
+            "Your Blog has been successfully deleted!"
+          );
+          localStorage.setItem("alertColor", "lightgreen");
+          props.setAlertMsg("Your Blog has been successfully deleted!");
+          props.setAlertColor("lightgreen");
+        })
+        .catch((error) => {
+          localStorage.setItem("alertMsg", error);
+          props.setAlertMsg(error);
+          localStorage.setItem("alertColor", "red");
+          props.setAlertColor("red");
+        });
+    } else {
+      const blogdelete = doc(db, "blogPosts", id);
+      await deleteDoc(blogdelete)
+        .then(() => {
+          setTemp(false);
+          navigate("/BlogHome");
+          window.location.reload(false);
+          localStorage.setItem(
+            "alertMsg",
+            "Your Blog has been successfully deleted!"
+          );
+          localStorage.setItem("alertColor", "lightgreen");
+          props.setAlertMsg("Your Blog has been successfully deleted!");
+          props.setAlertColor("lightgreen");
+        })
+        .catch((error) => {
+          localStorage.setItem("alertMsg", error);
+          props.setAlertMsg(error);
+          localStorage.setItem("alertColor", "red");
+          props.setAlertColor("red");
+        });
+    }
   };
 
   return (
     <>
-      {/* <Helmet>
-        <title>Blog Page | VALSCO - {title}</title>
+      <Helmet>
+        <title>Blog Page | VALSCO</title>
         <meta name="description" content={postText} />
-      </Helmet> */}
+      </Helmet>
       <main className="Blog_post_wrapper">
         <div className="Blog_heading">
           <h1>{title}</h1>
@@ -114,7 +137,11 @@ const BlogPage = (props) => {
           {ImgSrc && <img src={ImgSrc} alt="Blog's Descriptive" />}
         </div>
         <div className="Blog_details_sm">
-          {logo && <img src={logo} alt="DP" />}
+          {author && author.profileImg ? (
+            <img src={author.profileImg} alt="DP" />
+          ) : (
+            <img src={logo} alt="DP" />
+          )}
           <p>
             <span> By {author && author.name}</span> <br />
             {publishDate}
