@@ -145,6 +145,9 @@
         max-width: 55%;
         padding: 0.5rem;
     }
+    .member-card:hover {
+        box-shadow: none;
+    }      
     .member-card .member-img {
         box-shadow: none;
         width: 70%;

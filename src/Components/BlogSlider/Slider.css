@@ -31,10 +31,8 @@
     text-align: center;
 }
 
-.swiper-slide-btn-div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.swipe-slide-btn-div {
+    margin: 0.5rem;
 }
 
 .swipe-slide-btn {
