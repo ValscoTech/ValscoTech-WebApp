@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { Helmet } from "react-helmet-async";
 import { FaBars, FaTimes } from "react-icons/fa";
-import "./Navbar.css";
 import logo from "../../Assets/logo.png";
+import "./Navbar.css";
 
 const HomeNav = () => {
   const [click, setClick] = useState(false);
@@ -28,26 +29,22 @@ const HomeNav = () => {
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
-              <a
-                href="#products"
-                className={({ isActive }) =>
+              <HashLink to =  "#products" className={({ isActive }) =>
                   "nav-links" + (isActive ? " activated" : "")
                 }
-                onClick={closeMobileMenu}
-              >
-                Products
-              </a>
+                onClick={closeMobileMenu}>
+                  Products
+                </HashLink>
             </li>
             <li className="nav-item">
-              <a
-                href="#about"
+              <HashLink to="#about"
                 className={({ isActive }) =>
                   "nav-links " + (isActive ? " activated" : "")
                 }
                 onClick={closeMobileMenu}
               >
                 About Us
-              </a>
+              </HashLink>
             </li>
             <li className="nav-item">
               <NavLink
@@ -61,15 +58,15 @@ const HomeNav = () => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <a
-                href="#contactuspage"
+              <HashLink
+                to="#contactuspage"
                 className={({ isActive }) =>
                   "nav-links " + (isActive ? " activated" : "")
                 }
                 onClick={closeMobileMenu}
               >
                 Contact Us
-              </a>
+              </HashLink>
             </li>
           </ul>
         </div>
