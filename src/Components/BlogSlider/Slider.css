@@ -40,7 +40,7 @@
 .swipe-slide-btn {
     padding: 0.75rem 1rem;
     border-radius: 10px;
-    background: rgba(44, 16, 225, 0.682);
+    background: linear-gradient(#210cac, #4dc9e6);
     margin: 4px 1rem;
     color: white;
     border: 1px solid white;
@@ -48,7 +48,7 @@
 }
 
 .swipe-slide-btn:hover {
-    background: rgba(76, 202, 230, 0.823);
+    background: linear-gradient(90deg, hsla(207, 96%, 69%, 1) 0%, hsla(220, 97%, 64%, 1) 0%, hsla(192, 89%, 63%, 1) 100%);
     border: 1px solid black;
     color: black;
 }

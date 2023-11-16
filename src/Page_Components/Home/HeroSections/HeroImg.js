@@ -40,7 +40,7 @@ const HoverImage = () => {
   };
 
   return (
-    <Link to="aboutuspage">
+    <Link to="about">
       <div className="softimagecontainer">
         <div className="softimage" ref={containerRef}>
           <img

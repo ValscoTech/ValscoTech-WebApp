@@ -14,7 +14,7 @@
 #about h2 {
     text-transform: capitalize;
     font-size: 3rem;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .moto-details {
@@ -26,7 +26,6 @@
 
 .moto-img {
     width: 25%;
-    aspect-ratio: 1;
     box-shadow: 10px 20px 40px grey;
 }
 
@@ -42,8 +41,8 @@
 
 .moto-desc h3 {
     text-transform: uppercase;
-    font-size: 1.4rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 500;
     margin-bottom: 1rem;
 }
 
@@ -81,6 +80,7 @@
     border-radius: 50%;
     box-shadow: 5px 5px 15px black;
     overflow: hidden;
+    aspect-ratio: 1;
 }
 
 .member-img img {
@@ -115,7 +115,7 @@
 }
 
 .member-desc p {
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 
 .bottom {
@@ -125,9 +125,9 @@
 }
 
 @media screen and (max-width: 1024px) {
+    
     .moto-details {
         flex-direction: column;
-        text-align: center;
     }
 
     .moto-desc,
@@ -135,16 +135,52 @@
         width: auto;
     }
 
+    .members{
+        gap: 10rem;
+    }
+
     .member-card {
         box-shadow: 5px 5px 15px black;
+        box-shadow: none;
+        max-width: 55%;
+        padding: 0.5rem;
+    }
+    .member-card .member-img {
+        box-shadow: none;
+        width: 70%;
     }
 
     .member-desc {
         visibility: visible;
+        border-radius: 8%;
+        margin-top: 5%;
+        box-shadow: 5px 5px 10px #000;
+        text-align: center;
+        line-height: 1.5;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        font-size: 1.25rem;
+    }
+    .member-desc p {
+        font-size: 1.2rem;
     }
 }
 
 @media screen and (max-width: 550px) {
+    .member-card {
+        max-width: fit-content;
+    }
+
+    .member-desc h4 {
+        font-weight: 300;
+    }
+
+    .member-desc p {
+        font-size: 1rem;
+        font-family: sans-serif;
+    }
+
     .moto-img {
         width: 75%;
     }

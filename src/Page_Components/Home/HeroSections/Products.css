@@ -53,10 +53,6 @@
   .iphone3 {
     margin-left: -10%;
   }
-
-  .iphone2:hover {
-    margin: 0 10%;
-  }
 }
 
 @media screen and (max-width: 400px) {

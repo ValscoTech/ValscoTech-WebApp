@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { NavLink, Link } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
+import { NavLink } from "react-router-dom";
+import { Link } from "react-scroll";
 import { Helmet } from "react-helmet-async";
 import { FaBars, FaTimes } from "react-icons/fa";
-import logo from "../../Assets/logo.png";
 import "./Navbar.css";
+import logo from "../../Assets/logo.png";
 
 const HomeNav = () => {
   const [click, setClick] = useState(false);
@@ -20,7 +20,7 @@ const HomeNav = () => {
 
       <nav className="navbar">
         <div className="navbar-container">
-          <Link to="/" className="navbar-logo">
+          <Link to="landing" className="navbar-logo">
             <img src={logo} alt="icon" className="navbar-icon" />
             <h1>VALSCO TECHNOLOGY</h1>
           </Link>
@@ -29,22 +29,26 @@ const HomeNav = () => {
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
-              <HashLink to =  "#products" className={({ isActive }) =>
+              <Link
+                to="products"
+                className={({ isActive }) =>
                   "nav-links" + (isActive ? " activated" : "")
                 }
-                onClick={closeMobileMenu}>
-                  Products
-                </HashLink>
+                onClick={closeMobileMenu}
+              >
+                Products
+              </Link>
             </li>
             <li className="nav-item">
-              <HashLink to="#about"
+              <Link
+                to="about"
                 className={({ isActive }) =>
                   "nav-links " + (isActive ? " activated" : "")
                 }
                 onClick={closeMobileMenu}
               >
                 About Us
-              </HashLink>
+              </Link>
             </li>
             <li className="nav-item">
               <NavLink
@@ -58,15 +62,15 @@ const HomeNav = () => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <HashLink
-                to="#contactuspage"
+              <Link
+                to="contactuspage"
                 className={({ isActive }) =>
                   "nav-links " + (isActive ? " activated" : "")
                 }
                 onClick={closeMobileMenu}
               >
                 Contact Us
-              </HashLink>
+              </Link>
             </li>
           </ul>
         </div>

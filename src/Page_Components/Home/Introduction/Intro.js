@@ -14,7 +14,7 @@ function Intro() {
         />
         <link rel="canonical" href="/loading" />
       </Helmet>
-      <section className="landing_wrapper">
+      <section className="landing_wrapper" id = "landing">
         <div className="landing_img">
           <img src={logo} id="logo" alt="Valsco" />
         </div>
