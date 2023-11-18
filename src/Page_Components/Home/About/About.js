@@ -25,39 +25,38 @@ const About = () => {
           <div className="moto-desc">
             <h3>Our People Come First</h3>
             <p className="lg_scr">
-              Valsco specializes in developing custom software solutions that
-              are tailored to meet the unique needs of the clients. We
-              understand that investing in software solutions is a big decision
-              for any business. That is why we offer a comprehensive range of
-              services that go beyond just software development. Our consulting,
-              training, and support services are designed to ensure that our
-              clients can get the most out of their needs and visions. Valsco
-              focuses on innovation and development.
-              <hr />
-              This involves constantly exploring new technologies, methods, and
-              processes to create software solutions that are more efficient,
-              effective, and user-friendly. In addition to innovation, we as a
-              company also focus on improving its products, processes, and
-              services. This involves regularly evaluating the effectiveness of
-              existing solutions and identifying areas for improvement.
-              <hr />
-              Continuous improvement ensures that our company is always of the
-              highest quality and offers maximum value to customers. Our team of
-              experienced developers, designers, and project managers work
-              closely with our clients to ensure that their software solutions
-              are not only user-friendly, but also efficient and effective.
+              Valsco specializes in developing custom software solutions
+              tailored to meet the unique needs of clients, recognizing the
+              significant decision businesses make when investing in software.
+              Beyond software development, we offer comprehensive services
+              encompassing consulting, training, and support to ensure clients
+              maximize the benefits of their visions. With a focus on innovation
+              and development, we continually explore new technologies, methods,
+              and processes to create software solutions that are efficient,
+              effective, and user-friendly. Simultaneously, we prioritize
+              improving our products, processes, and services through regular
+              evaluations and identification of areas for enhancement. Our
+              commitment to continuous improvement ensures our company
+              consistently delivers the highest quality, providing maximum value
+              to our customers. The team, consisting of experienced developers,
+              designers, and project managers, collaborates closely with clients
+              to ensure that their software solutions not only meet
+              user-friendly standards but also exhibit efficiency and
+              effectiveness.
             </p>
             <p className="mb_scr">
               At Valsco , we specialize in crafting custom software solutions
               tailored to our clients' unique needs. Our services extend beyond
               development ,encompassing consulting, training, and support to
-              ensure our clients achieve their visions. Innovation is our
-              hallmark, as we continuously explore new technologies to create
-              efficient, user-friendly solutions. With a team of experienced
-              developers, designers, and project managers, we excel in website
-              development, mobile applications, personalized software, and more.
-              Our commitment to improvement guarantees high-quality solutions
-              that deliver maximum value.
+              ensure our clients achieve their visions.
+              <hr />
+              Innovation is our hallmark, as we continuously explore new
+              technologies to create efficient, user-friendly solutions.
+              <hr />
+              With a team of experienced developers, designers, and project
+              managers, we excel in website development, mobile applications,
+              personalized software, and more. Our commitment to improvement
+              guarantees high-quality solutions that deliver maximum value.
             </p>
           </div>
         </div>

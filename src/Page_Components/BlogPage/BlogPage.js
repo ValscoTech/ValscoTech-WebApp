@@ -186,8 +186,10 @@ const BlogPage = (props) => {
               <p>
                 Get More Done Together with us
                 <br />
-                Energize your Software Solutions with our comprehensive range of
-                services.
+                <span>
+                  Energize your Software Solutions with our comprehensive range
+                  of services.
+                </span>
               </p>
               <Link to={`/Login`} className="blog-card-read-btn">
                 <button id="getStarted">Get Started</button>

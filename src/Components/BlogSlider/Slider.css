@@ -1,55 +1,72 @@
-#valsco-logo {
-    margin: auto;
-}
-
-.swiperslide {
-    max-width: 50%;
+.swiper-container {
+    margin-top: 100px;
 }
 
 .swiper-slide-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    border-radius: 20px;
-    margin: 30px;
-    padding: 20px;
-    padding-top: 40px;
+    justify-content: center;
     box-shadow: 0px 0px 10px 2px lightgrey;
-    gap: 1rem;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 50px;
+    gap: 0.7rem;
 }
 
 .swiper-slide-title {
-    font-size: 1.5rem;
-}
-
-.swiper-slide-author {
-    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .swiper-slide-desc {
     text-align: center;
+    height: 120px;
 }
 
-.swipe-slide-btn-div {
-    margin: 0.5rem;
+.swiperslide {
+    max-width: 50%;
 }
 
-.swipe-slide-btn {
-    padding: 0.75rem 1rem;
-    border-radius: 10px;
-    background: linear-gradient(#210cac, #4dc9e6);
-    margin: 4px 1rem;
-    color: white;
-    border: 1px solid white;
+Swiper {
+    background-position: center;
+}
+
+.swiper-slide-author {
     text-align: center;
+    font-weight: bold;
 }
-
-.swipe-slide-btn:hover {
-    background: linear-gradient(90deg, hsla(207, 96%, 69%, 1) 0%, hsla(220, 97%, 64%, 1) 0%, hsla(192, 89%, 63%, 1) 100%);
-    border: 1px solid black;
+.swipe-slide-btn-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.swipe-slide-btn {
+    padding: 5px 10px;
+    border-radius: 10px;
+    background: linear-gradient(
+      hsla(248, 87%, 36%, 1) 0%,
+      hsla(191, 75%, 60%, 1) 100% 
+    );
+    margin: 4px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    text-align: center;
+    border: 1px solid transparent;
+  }
+  .swipe-slide-btn:hover {
+    background: linear-gradient(
+      rgb(255, 255, 255) 0%,
+      rgb(255, 255, 255) 100% 
+    );
+    border: 1px solid green;
     color: black;
-}
+    text-decoration: none;
+  }
 
 .slider-instruct {
     text-align: center;
@@ -61,13 +78,15 @@
     }
 }
 
-@media screen and (max-width: 430px) {
-    .swiper-slide-title {
-        font-size: 1.1rem;
-    }
-
+@media screen and (max-width: 970px) {
     .swiper-slide-desc {
-        font-size: 0.8rem;
+        height: fit-content;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .swiper-slide-desc {
+        height: 220px;
     }
 
     .swiperslide {
@@ -76,6 +95,9 @@
 }
 
 @media screen and (max-width: 340px) {
+    .swiper-slide-desc {
+        height: fit-content;
+    }
     .swiperslide {
         max-width: 70%;
     }

@@ -1,8 +1,9 @@
 .navbar {
     background: #f7f7fa;
-    height: 80px;
     display: flex;
     justify-content: space-around;
+    gap: 2rem;
+    padding: 20px;
     align-items: center;
     font-size: 1.2rem;
     position: sticky;
@@ -23,9 +24,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    font-family: 'Courier New';
     font-weight: 300;
-    padding: 0 2rem;
 }
 
 .container {
@@ -34,14 +33,12 @@
 }
 
 .navbar-logo {
-    justify-self: left;
     cursor: pointer;
     display: flex;
     align-items: center;
 }
 
 .navbar-icon {
-    margin-right: 0.5rem;
     height: 64px;
     background: transparent;
 }
@@ -122,12 +119,11 @@
         position: fixed;
         top: 0;
         left: -100%;
-        margin-top: 80px;
+        margin-top: 104px;
         opacity: 1;
-        padding-bottom: 1rem;
-        padding-right: 1rem;
         align-items: flex-start;
         text-align: left;
+        padding: 1rem;
     }
 
     .nav-menu.active {
@@ -154,7 +150,6 @@
     .nav-item:hover,
     .nav-links:hover .nav-item {
         padding: 1rem;
-        border: 2px solid black;
     }
 
     .nav-item:hover a,
@@ -167,5 +162,6 @@
         font-size: 1rem;
         cursor: pointer;
         z-index: 9999;
+        margin-top: 0.4rem;
     }
 }

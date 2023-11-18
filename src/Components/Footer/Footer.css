@@ -1,6 +1,5 @@
 .contact-section {
     background-color: black;
-    color: silver;
     padding: 5%;
     display: flex;
     flex-direction: column;
@@ -8,22 +7,37 @@
     padding-bottom: 2rem;
 }
 
-.contact-section .subheadings {
-    font-size: 6vw;
-    font-family: sans-serif;
-    font-weight: 400;
+.contact-section * {
+    color: silver;
 }
 
-.contact-section .subheadings span {
+.contact-section .subheadings-1 span,
+.contact-section .subheadings-2 span {
     position: relative;
     display: block;
     width: fit-content;
     border: 0px solid silver;
     transform-origin: bottom left;
     border-radius: 10px;
+    line-height: 90%;
+    margin-bottom: 0.5rem;
 }
 
-.contact-section .subheadings span::after {
+.contact-section .subheadings-1 span {
+    font-family: sans-serif;
+    font-size: 8vw;
+    font-weight: 400;
+}
+
+.contact-section .subheadings-2 span {
+    font-size: 5vw;
+    font-weight: 150;
+    margin: 4% 0;
+    line-height: normal;
+}
+
+.contact-section .subheadings-1 span::after,
+.contact-section .subheadings-2 span::after {
     content: "";
     position: absolute;
     left: 0;
@@ -36,7 +50,8 @@
     transition: transform 1s ease-in;
 }
 
-.contact-section .subheadings span:hover::after {
+.contact-section .subheadings-1 span:hover::after,
+.contact-section .subheadings-2 span:hover::after {
     cursor: grab;
     transform: scaleX(1);
 }
@@ -47,14 +62,18 @@
     font-family: sans-serif;
 }
 
+.contact-section .para hr {
+    margin: 1rem 0;
+    border: 1px solid transparent;
+}
+
 .b-form {
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    border: 1px solid white;
     gap: 1rem;
-    padding: 2rem;
+    padding: 2rem 0;
     border-radius: 10px;
+    margin-top: 4rem ;
 }
 
 .b-form h2 {
@@ -62,6 +81,7 @@
     line-height: 2;
     text-align: center;
     width: min-content;
+    display: none;
 }
 
 .b-form .form-controls {
@@ -69,14 +89,17 @@
     flex-direction: column;
     gap: 2rem;
     align-items: center;
-    width: 50%;
+    width: 85%;
 }
-
+.b-form #number{
+    width: 300px;
+}
 .b-form .input_fields {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     width: 100%;
+    margin-top: 2%;
 }
 
 .b-form label {
@@ -109,20 +132,13 @@ input:focus:invalid {
 }
 
 .b-form button {
-    padding: 1rem;
+    margin-top:2%;
+    padding: 2rem;
+    font-size: 1.25rem;
     border-radius: 15px;
-    border: 2px solid silver;
-    color: #fff;
-    cursor: pointer;
-    background: transparent;
-}
-
-.b-form .inp_error {
-    display: none;
-}
-
-.b-form button:hover {
+    font-weight: 600;
     box-shadow: 5px 5px 10px black;
+    border:2px solid #0d6efd;
     transform: scale(1.02);
     background: linear-gradient(90deg,
             hsla(191, 75%, 60%, 1) 0%,
@@ -137,9 +153,23 @@ input:focus:invalid {
             hsla(248, 87%, 36%, 1) 100%);
 }
 
+.b-form .inp_error {
+    display: none;
+}
+
+.b-form button:hover {
+    border: 2px solid silver;
+    color: #fff;
+    cursor: pointer;
+    background: transparent;
+}
+
 .address {
     line-height: 1.5rem;
     margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .address a {
@@ -156,7 +186,9 @@ input:focus:invalid {
     color: black;
     background: silver;
 }
-
+.address span{
+    font-size: 1rem;
+}
 .icon-3d {
     padding: 10px;
     -webkit-animation: icon3d 200ms 10;
@@ -194,6 +226,9 @@ input:focus:invalid {
 @media screen and (max-width:500px) {
     .b-form {
         flex-direction: column;
+        justify-content: space-around;
+        border: 1px solid white;
+        padding: 2rem;
     }
 
     .contact-section .para {
@@ -206,12 +241,31 @@ input:focus:invalid {
         font-size: 2rem;
     }
 
+    .contact-section .subheadings-1 span {
+        font-size: 8vw;
+    }
+
+    .contact-section .subheadings-2 span {
+        font-size: x-large;
+    }
+
     .b-form h2 {
+        display: block;
         font-size: 2rem;
         width: 100%;
     }
 
     .b-form .form-controls {
         width: 100%;
+    }
+    .b-form #number{
+        width: 100%;
+    }
+    .b-form button{
+        font-size: 1rem;
+        padding: 1rem;
+    }
+    .address span{
+        font-size: 0.8rem;
     }
 }

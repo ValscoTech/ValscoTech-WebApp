@@ -78,11 +78,13 @@
     line-height: 1rem;
     align-items: center;
 }
-
-.popularPosts * {
-    color: #172B4D;
+.post_content{
+    align-self: flex-start;
 }
-
+.post_content p {
+    color: #172B4D;
+    font-size: 0.8rem;
+  }
 .post_container {
     transition: all 0.2s ease-in-out;
 }
@@ -96,10 +98,6 @@
 .post_container img {
     width: 100px;
     height: 100px;
-}
-
-.post_container p {
-    font-size: 0.9rem;
 }
 
 .blog_body h3 {
@@ -117,11 +115,17 @@
 .banner {
     border-radius: 4px;
     background: #06044E;
-    color: #FFF;
     font-size: 0.9rem;
     text-align: center;
     padding: 1rem;
     margin: 1rem 0;
+}
+.banner p {
+    color: #FFF;
+}
+.banner span{
+    color: #FFF;
+    font-size: 0.8rem;
 }
 
 .banner br {
@@ -149,6 +153,7 @@
     padding: 3rem 7%;
     font-size: 3rem;
     width: 95%;
+    color: #172B4D;
 }
 
 .banner button:hover {

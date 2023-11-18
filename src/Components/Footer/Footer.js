@@ -65,7 +65,7 @@ const Footer = () => {
   };
   return (
     <section id="contactuspage" className="contact-section">
-      <div className="subheadings">
+      <div className="subheadings-1">
         <span>FUEL.</span>
         <span>ELEVATE.</span> <span>IGNITE YOUR</span>
         <span>SW SOLUTIONS.</span>
@@ -80,7 +80,7 @@ const Footer = () => {
           business and drive it towards greater efficiency, productivity, and
           growth. Don't wait - unlock your full potential with Valsco. Contact
           us today.
-          <br />
+          <hr />
           Experience the Valsco Difference, Request a Consultation Today!
         </p>
       </div>
@@ -162,9 +162,9 @@ const Footer = () => {
       </form>
       <div className="contact-container">
         <div className="contact-Details">
-          <div className="subheadings">
-            <span>You Got an Idea?</span>
-            <span>Try it with Us!</span>
+          <div className="subheadings-2">
+            <span>Have an Idea?</span>
+            <span>Tell us about it!</span>
           </div>
           <div className="address">
             <a href="mailto:connect@valscotech.com">connect@valscotech.com</a>
@@ -172,48 +172,43 @@ const Footer = () => {
               NOIDA,J-3 SHAHABDI ENCLAVE
               <br />
               NOIDA, UTTAR PRADESH 201301
-              <br />
-              Privacy Policy
             </p>
+            <span>Privacy Policy</span>
           </div>
         </div>
         <div className="social-handles">
-          <div className="f">
-            <div className="flex-center">
-              <i
-                className="fa fa-github fa-4x icon-3d"
-                style={{ fontSize: "48px" }}
-              ></i>
-              <i
-                className="fa fa-twitter fa-4x icon-3d"
-                style={{ fontSize: "48px" }}
-              ></i>
-              <i
-                className="fa fa-facebook fa-4x icon-3d"
-                style={{ fontSize: "48px" }}
-              ></i>
-              <a
-                href="https://instagram.com/vals.co_tech?igshid=NTc4MTIwNjQ2YQ=="
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i
-                  className="fa fa-instagram fa-4x icon-3d"
-                  style={{ fontSize: "48px" }}
-                ></i>
-              </a>
-              <a
-                href="https://www.linkedin.com/company/valscotech/?fbclid=PAAaZ3ATa670NzIC1DB7OLSwzO9bOqISugzSF9Bs-sWUJjBBKLuYvnkm-qUJw"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i
-                  className="fa fa-linkedin fa-4x icon-3d"
-                  style={{ fontSize: "48px" }}
-                ></i>
-              </a>
-            </div>
-          </div>
+          <i
+            className="fa fa-github fa-4x icon-3d"
+            style={{ fontSize: "48px" }}
+          ></i>
+          <i
+            className="fa fa-twitter fa-4x icon-3d"
+            style={{ fontSize: "48px" }}
+          ></i>
+          <i
+            className="fa fa-facebook fa-4x icon-3d"
+            style={{ fontSize: "48px" }}
+          ></i>
+          <a
+            href="https://instagram.com/vals.co_tech?igshid=NTc4MTIwNjQ2YQ=="
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i
+              className="fa fa-instagram fa-4x icon-3d"
+              style={{ fontSize: "48px" }}
+            ></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/company/valscotech/?fbclid=PAAaZ3ATa670NzIC1DB7OLSwzO9bOqISugzSF9Bs-sWUJjBBKLuYvnkm-qUJw"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i
+              className="fa fa-linkedin fa-4x icon-3d"
+              style={{ fontSize: "48px" }}
+            ></i>
+          </a>
         </div>
       </div>
     </section>

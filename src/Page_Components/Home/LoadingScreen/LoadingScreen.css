@@ -93,14 +93,15 @@ span {
     color: black;
     height: 100vh;
     animation: fade 3000ms;
-    font-size: 120px;
     margin-left: 50vw;
-    font-weight: bolder;
     padding-top: 273px;
     animation: moveLeft 700ms ease-in;
     margin-right: 5vw;
 }
-
+.text span{
+    font-weight: 600;
+    font-size: 120px;
+}
 .center {
     font-size: 120px;
 }
@@ -153,10 +154,13 @@ span {
     span {
         padding-right: 15px;
     }
-
-    .text {
-        font-size: 100px;
+    
+    .text{
         margin-left: 40vw;
+    }
+
+    .text span{
+        font-size: 100px;
     }
 
     .center {
@@ -186,10 +190,11 @@ span {
     }
 
     .text {
-        font-size: 90px;
         margin-left: 40vw;
     }
-
+    .text span{
+        font-size: 90px;
+    }
     .center {
         font-size: 90px;
     }
@@ -216,10 +221,11 @@ span {
     }
 
     .text {
-        font-size: 55px;
         margin-left: 50vw;
+    }   
+    .text span{
+        font-size: 55px;
     }
-
     .center {
         font-size: 55px;
     }
@@ -241,10 +247,9 @@ span {
 }
 
 @media only screen and (max-width: 400px) {
-    .text {
+    .text span {
         font-size: 36px;
-    }
-
+    };
     .center {
         font-size: 36px;
     }
