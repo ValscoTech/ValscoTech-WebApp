@@ -6,7 +6,7 @@ import { ref, deleteObject } from "firebase/storage";
 import { deleteDoc, doc } from "firebase/firestore";
 import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import logo from "../../Assets/logo.png";
+import logo from "../../Assets/Company_Logo.png";
 import Slider from "../../Components/BlogSlider/Slider";
 import Footer from "../../Components/Footer/Footer";
 import "./BlogPage.css";

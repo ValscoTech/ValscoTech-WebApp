@@ -19,10 +19,12 @@
     opacity: 1;
     min-height: 100vh;
     padding-top: 0;
+    gap: 1rem;
 }
 
 .landing_img img {
-    width: 325px;
+    width: 100%;
+    aspect-ratio: 1;
 }
 
 .landing_desc {

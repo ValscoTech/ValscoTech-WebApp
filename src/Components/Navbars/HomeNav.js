@@ -4,7 +4,7 @@ import { Link } from "react-scroll";
 import { Helmet } from "react-helmet-async";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "./Navbar.css";
-import logo from "../../Assets/logo.png";
+import logo from "../../Assets/Company_Logo.png";
 
 const HomeNav = () => {
   const [click, setClick] = useState(false);

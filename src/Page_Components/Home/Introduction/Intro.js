@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import "./Intro.css";
-import logo from "../../../Assets/logo.png";
+import heroImg from "../../../Assets/Company_Logo.png";
 
 function Intro() {
   return (
@@ -16,7 +16,7 @@ function Intro() {
       </Helmet>
       <section className="landing_wrapper" id = "landing">
         <div className="landing_img">
-          <img src={logo} id="logo" alt="Valsco" />
+          <img src={heroImg} id="logo" alt="Valsco" />
         </div>
         <div className="landing_desc">
           <h1>Valsco</h1>

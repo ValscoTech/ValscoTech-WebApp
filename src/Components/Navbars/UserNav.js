@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { signOut } from "firebase/auth";
 import { auth } from "../../Firebase_Config/firebaseConfig";
-import logo from "../../Assets/logo.png";
+import logo from "../../Assets/Company_Logo.png";
 import "./Navbar.css";
 
 const UserNav = (props) => {
