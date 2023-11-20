@@ -1,31 +1,32 @@
 import React, { useEffect, useState } from "react";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
-// General Components
-import { LoadingScreen } from "./Page_Components/Home/LoadingScreen/LoadingScreen";
-import Footer from "./Components/Footer/Footer";
+import About from "./Page_Components/Home/About/About";
 import Alert from "./Components/Alerts/Alert";
-import UserNav from "./Components/Navbars/UserNav"; // Used for [Login page], [Create Blog Page] and [Read Blogs Page] only
-
-// Home Page Components
+import BlogPage_Body from "./Page_Components/BlogPage/BlogPage";
+import CreateBlog_Body from "./Page_Components/CreateBlog/CreateBlog";
+import Footer from "./Components/Footer/Footer";
+import HeroImg from "./Page_Components/Home/HeroSections/HeroImg";
 import HomeNav from "./Components/Navbars/HomeNav";
 import Intro from "./Page_Components/Home/Introduction/Intro";
-import HeroImg from "./Page_Components/Home/HeroSections/HeroImg";
+import { LoadingScreen } from "./Page_Components/Home/LoadingScreen/LoadingScreen";
+import LoginBody from "./Page_Components/Login/Login";
 import Products from "./Page_Components/Home/HeroSections/Products";
+import ReadBlogs_Body from "./Page_Components/ReadBlog/ReadBlog";
 import Slider from "./Components/BlogSlider/Slider";
-import About from "./Page_Components/Home/About/About";
+import UserNav from "./Components/Navbars/UserNav"; // Used for [Login page], [Create Blog Page] and [Read Blogs Page] only
+
+// General Components
+
+// Home Page Components
 
 // Login Page Component
-import LoginBody from "./Page_Components/Login/Login";
 
 // Create Blog Page Component
-import CreateBlog_Body from "./Page_Components/CreateBlog/CreateBlog";
 
 // Read Blogs Page Component
-import ReadBlogs_Body from "./Page_Components/ReadBlog/ReadBlog";
 
 // Detailed Blog Page Component
-import BlogPage_Body from "./Page_Components/BlogPage/BlogPage";
 
 function App() {
   const [isLoadingComplete, setIsLoadingComplete] = useState(false);
