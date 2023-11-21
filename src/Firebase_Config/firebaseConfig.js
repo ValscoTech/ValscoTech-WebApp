@@ -1,7 +1,31 @@
 // Import the functions you need from the SDKs you need
-import { GoogleAuthProvider, getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import {
+  FacebookAuthProvider,
+  GoogleAuthProvider,
+  createUserWithEmailAndPassword,
+  getAuth,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+
+  getRedirectResult,
+  signInWithRedirect,
+  signOut,
+} from "firebase/auth";
+import {
+  arrayUnion,
+  collection,
+  deleteDoc,
+  doc,
+  getDoc,
+  getDocs,
+  getFirestore,
+  setDoc,
+  writeBatch,
+} from "firebase/firestore";
 import { getStorage } from "firebase/storage";
+
+
 
 import { initializeApp } from "firebase/app";
 
@@ -22,3 +46,23 @@ export const db = getFirestore(app);
 export const auth = getAuth(app);
 export const provider = new GoogleAuthProvider();
 export const storage = getStorage(app);
+
+
+export const createDoc = async (
+  { name,
+    email,
+    number,
+    company }
+) => {
+  const createdAt = new Date();
+  const currenttime = Date.now();
+  const userDocRef = doc(collection(db, "contacts"));
+
+  await setDoc(userDocRef, {
+    createdAt,
+    name,
+    email,
+    number,
+    company,
+  });
+};

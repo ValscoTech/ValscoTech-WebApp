@@ -15,7 +15,7 @@ import Products from "./Page_Components/Home/HeroSections/Products";
 import ReadBlogs_Body from "./Page_Components/ReadBlog/ReadBlog";
 import Slider from "./Components/BlogSlider/Slider";
 import UserNav from "./Components/Navbars/UserNav"; // Used for [Login page], [Create Blog Page] and [Read Blogs Page] only
-
+// const axios = require('axios');
 // General Components
 
 // Home Page Components
@@ -28,6 +28,8 @@ import UserNav from "./Components/Navbars/UserNav"; // Used for [Login page], [C
 
 // Detailed Blog Page Component
 
+// axios.defaults.baseURL = "https://valscobackendtest.onrender.com"
+// axios.defaults.baseURL = "http://localhost:5000"
 function App() {
   const [isLoadingComplete, setIsLoadingComplete] = useState(false);
   const [authenticated, setAuthenticated] = useState(
