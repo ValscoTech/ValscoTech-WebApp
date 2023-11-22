@@ -40,12 +40,11 @@ const Footer = () => {
           createDoc(newContact);
           setIsSuccess(true);
           setIsValid(true);
-
+          alert("Your response has been submitted");
           setTimeout(() => {
             setIsSuccess(false);
             setNewContact({ name: "", email: "", number: "", company: "" });
           }, 3000);
-          // alert("Your response has been submitted");
         })
         .catch(function (error) {
           console.log(error);
@@ -160,7 +159,7 @@ const Footer = () => {
           <div className="address">
             <a href="mailto:connect@valscotech.com">connect@valscotech.com</a>
             <p>
-              NOIDA,J-3 SHAHABDI ENCLAVE
+              J-3 SHAHABDI ENCLAVE
               <br />
               NOIDA, UTTAR PRADESH 201301
             </p>
@@ -169,17 +168,19 @@ const Footer = () => {
         </div>
         <div className="social-handles">
           <i
-            className="fa fa-github fa-4x icon-3d"
-            style={{ fontSize: "48px" }}
-          ></i>
-          <i
             className="fa fa-twitter fa-4x icon-3d"
             style={{ fontSize: "48px" }}
           ></i>
-          <i
-            className="fa fa-facebook fa-4x icon-3d"
-            style={{ fontSize: "48px" }}
-          ></i>
+                    <a
+            href="https://www.facebook.com/profile.php?id=61550764448476&mibextid=ZbWKwL"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i
+              className="fa fa-facebook fa-4x icon-3d"
+              style={{ fontSize: "48px" }}
+            ></i>
+          </a>
           <a
             href="https://instagram.com/vals.co_tech?igshid=NTc4MTIwNjQ2YQ=="
             target="_blank"

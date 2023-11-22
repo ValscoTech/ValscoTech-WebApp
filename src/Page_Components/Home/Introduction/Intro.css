@@ -24,6 +24,7 @@
 
 .landing_img img {
     width: 100%;
+    max-width: 400px;
     aspect-ratio: 1;
 }
 

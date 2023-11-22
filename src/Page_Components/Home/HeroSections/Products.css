@@ -24,16 +24,16 @@
   transition: 1s;
 }
 
-.iphone2:hover {
-  margin: 0 15%;
-  transition: 0.5s;
-  cursor: pointer;
-}
-
 .iphone3 {
   transition: 1s;
   transform: translateX(-95px);
   z-index: 9;
+}
+
+.iphone2:hover {
+  margin: 0 15%;
+  transition: 0.5s;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 900px) {

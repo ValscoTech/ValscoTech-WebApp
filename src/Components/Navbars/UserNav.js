@@ -42,66 +42,66 @@ const UserNav = (props) => {
           <div className="menu-icon" onClick={handleClick}>
             {click ? <FaTimes /> : <FaBars />}
           </div>
-          <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li className="nav-item">
-              <NavLink
-                to="/"
-                className={({ isActive }) =>
-                  "nav-links" + (isActive ? "activated" : "")
-                }
-                onClick={closeMobileMenu}
-              >
-                Home
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                to="/BlogHome"
-                className={({ isActive }) =>
-                  "nav-links " + (isActive ? "activated" : "")
-                }
-                onClick={closeMobileMenu}
-              >
-                Read Blogs
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                to="/CreateBlog"
-                className={({ isActive }) =>
-                  "nav-links " + (isActive ? "activated" : "")
-                }
-                onClick={closeMobileMenu}
-              >
-                Create Blog
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              {props.authenticated ? (
-                <NavLink
-                  to="/Login"
-                  className={({ isActive }) =>
-                    "nav-links " + (isActive ? "activated" : "")
-                  }
-                  onClick={handleSignOut}
-                >
-                  Logout
-                </NavLink>
-              ) : (
-                <NavLink
-                  to="/Login"
-                  className={({ isActive }) =>
-                    "nav-links " + (isActive ? "activated" : "")
-                  }
-                  onClick={closeMobileMenu}
-                >
-                  Login
-                </NavLink>
-              )}
-            </li>
-          </ul>
         </div>
       </nav>
+      <div className={click ? "nav-menu active" : "nav-menu"}>
+        <li className="nav-item">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              "nav-links" + (isActive ? "activated" : "")
+            }
+            onClick={closeMobileMenu}
+          >
+            Home
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink
+            to="/BlogHome"
+            className={({ isActive }) =>
+              "nav-links " + (isActive ? "activated" : "")
+            }
+            onClick={closeMobileMenu}
+          >
+            Read Blogs
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink
+            to="/CreateBlog"
+            className={({ isActive }) =>
+              "nav-links " + (isActive ? "activated" : "")
+            }
+            onClick={closeMobileMenu}
+          >
+            Create Blog
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          {props.authenticated ? (
+            <NavLink
+              to="/Login"
+              className={({ isActive }) =>
+                "nav-links " + (isActive ? "activated" : "")
+              }
+              onClick={handleSignOut}
+            >
+              Logout
+            </NavLink>
+          ) : (
+            <NavLink
+              to="/Login"
+              className={({ isActive }) =>
+                "nav-links " + (isActive ? "activated" : "")
+              }
+              onClick={closeMobileMenu}
+            >
+              Login
+            </NavLink>
+          )}
+        </li>
+      </div>
     </>
   );
 };

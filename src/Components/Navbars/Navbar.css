@@ -3,10 +3,10 @@
     display: flex;
     justify-content: space-around;
     gap: 2rem;
-    padding: 20px;
+    padding: 1rem 20px;
     align-items: center;
     font-size: 1.2rem;
-    position: sticky;
+    position: relative;
     top: 0;
     z-index: 999;
     width: 100%;
@@ -25,6 +25,8 @@
     align-items: center;
     width: 100%;
     font-weight: 300;
+    margin: 0 2.5vw;
+    gap: 0.5rem;
 }
 
 .container {
@@ -36,6 +38,7 @@
     cursor: pointer;
     display: flex;
     align-items: center;
+    gap: 1rem;
 }
 
 .navbar-icon {
@@ -59,8 +62,11 @@
     border-radius: 5px;
     width: max-content;
 }
-
+.nav-item a{
+    font-size: 1.2rem;
+}
 .nav-item:hover {
+    cursor: pointer;
     font-weight: 700;
     background: linear-gradient(90deg, hsla(207, 96%, 69%, 1) 0%, hsla(220, 97%, 64%, 1) 0%, hsla(192, 89%, 63%, 1) 100%);
 }
@@ -121,18 +127,17 @@
         position: fixed;
         top: 0;
         left: -100%;
-        margin-top: 104px;
         opacity: 1;
         align-items: flex-start;
         text-align: left;
-        padding: 1rem;
+        padding: 7rem 1rem;
     }
 
     .nav-menu.active {
         left: 0;
         opacity: 1;
         transition: all 0.6s ease;
-        z-index: 1;
+        z-index: 998;
     }
 
     .nav-links {

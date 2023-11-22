@@ -1,8 +1,8 @@
 import React from "react";
 import "./Products.css";
-import Iphone from "../../../Assets/Product_Imgs/juri.png";
-import Client from "../../../Assets/Product_Imgs/client.png";
-import Login from "../../../Assets/Product_Imgs/login.png";
+import Iphone from "../../../Assets/Product_Imgs/Mockup_1.png";
+import Client from "../../../Assets/Product_Imgs/Mockup_2.png";
+import Login from "../../../Assets/Product_Imgs/Mockup_3.png";
 import { Helmet } from "react-helmet-async";
 
 const Products = () => {
