@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import "./Footer.css";
+import { createDoc } from "../../Firebase_Config/firebaseConfig";
+import axios from "axios";
+
+
 const backendURL = "https://valscobackendtest.onrender.com";
+// const backendURL = "http://localhost:5000";
 const Footer = () => {
   const [newContact, setNewContact] = useState({
     name: "",
@@ -21,43 +26,30 @@ const Footer = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    const url =
-      "https://website-bad9f-default-rtdb.asia-southeast1.firebasedatabase.app/contactUsRecords.json";
-
     try {
       newContact.name = newContact.name.trim();
       newContact.email = newContact.email.trim();
       newContact.company = newContact.company.trim();
-      const response = await fetch(url, {
-        method: "POST",
-        mode: "cors",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: newContact.name,
-          email: newContact.email,
-          number: newContact.number,
-          company: newContact.company,
-        }),
-      });
-
-      setIsSuccess(true);
-      setIsValid(true);
       let savedEmail = newContact.email;
       let savedName = newContact.name;
-      setTimeout(() => {
-        setIsSuccess(false);
-        setNewContact({ name: "", email: "", number: "", company: "" });
-      }, 3000);
-      const response2 = await fetch(backendURL, {
-        method: "POST",
-        mode: "cors",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name: savedName, email: savedEmail }),
-      });
+      axios.post(backendURL, {
+        name: savedName,
+        email: savedEmail
+      })
+        .then(function (response) {
+          createDoc(newContact);
+          setIsSuccess(true);
+          setIsValid(true);
+
+          setTimeout(() => {
+            setIsSuccess(false);
+            setNewContact({ name: "", email: "", number: "", company: "" });
+          }, 3000);
+          // alert("Your response has been submitted");
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     } catch (error) {
       alert(`The Following Error Occured: ${error}.\nKindly Try Again!`);
       setNewContact({ name: "", email: "", number: "", company: "" });
@@ -84,7 +76,7 @@ const Footer = () => {
           Experience the Valsco Difference, Request a Consultation Today!
         </p>
       </div>
-      <form method="POST" action={backendURL} className="b-form">
+      <form onSubmit={handleFormSubmit} className="b-form">
         <h2>Get In Touch</h2>
         <div className="form-controls">
           <div className="input_fields">
@@ -150,7 +142,6 @@ const Footer = () => {
             type="submit"
             className="Submit_Btn"
             id="formSubmitButton"
-            onClick={handleFormSubmit}
             disabled={isValid}
           >
             Click to send your message
