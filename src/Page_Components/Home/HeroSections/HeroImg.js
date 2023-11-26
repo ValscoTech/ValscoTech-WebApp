@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import gif from "../../../Assets/HomePage_Assets/valscogif.gif";
+import gif from "../../../Assets/HomePage_Assets/hoverImg.gif";
 import "./HeroImgHover.css";
 import { Link } from "react-scroll";
 

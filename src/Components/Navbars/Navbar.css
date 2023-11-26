@@ -56,7 +56,9 @@
     text-align: center;
     gap: 2vw;
 }
-
+.mob-nav{
+    display: none;
+}
 .nav-item {
     padding: 1rem;
     border-radius: 5px;
@@ -139,7 +141,9 @@
         transition: all 0.6s ease;
         z-index: 998;
     }
-
+    .mob-nav{
+        display: flex;
+    }
     .nav-links {
         font-weight: 600;
         text-align: left;

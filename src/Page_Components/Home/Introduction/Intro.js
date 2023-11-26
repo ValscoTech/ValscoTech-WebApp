@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import "./Intro.css";
-import heroImg from "../../../Assets/Company_Logo.png";
+import heroImg from "../../../Assets/HomePage_Assets/valscoLogo.gif";
 
 function Intro() {
   return (
