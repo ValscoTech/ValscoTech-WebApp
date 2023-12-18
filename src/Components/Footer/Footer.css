@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 }
 
 .contact-section * {
@@ -32,7 +32,8 @@
 .contact-section .subheadings-2 span {
     font-size: 5vw;
     font-weight: 150;
-    margin: 4% 0;
+    margin: 3.5% 0;
+    /* margin: 4% 0; */
     line-height: normal;
 }
 
@@ -53,7 +54,7 @@
     gap: 1rem;
     padding: 2rem 0;
     border-radius: 10px;
-    margin-top: 4rem ;
+    margin-top: 4rem;
 }
 
 .b-form h2 {
@@ -71,9 +72,11 @@
     align-items: center;
     width: 85%;
 }
-.b-form #number{
+
+.b-form #number {
     width: 300px;
 }
+
 .b-form .input_fields {
     display: flex;
     flex-direction: column;
@@ -96,9 +99,11 @@
     padding: 0.5rem;
     padding-top: 0;
 }
-.b-form input::placeholder{
+
+.b-form input::placeholder {
     color: rgb(61, 63, 65);
 }
+
 .b-form input:focus-visible {
     border: 2px solid silver;
     padding: 0.5rem;
@@ -115,13 +120,13 @@ input:focus:invalid {
 }
 
 .b-form button {
-    margin-top:2%;
+    margin-top: 2%;
     padding: 2rem;
     font-size: 1.25rem;
     border-radius: 15px;
     font-weight: 600;
     box-shadow: 5px 5px 10px black;
-    border:2px solid #0d6efd;
+    border: 2px solid #0d6efd;
     transform: scale(1.02);
     background: linear-gradient(90deg,
             hsla(191, 75%, 60%, 1) 0%,
@@ -140,11 +145,8 @@ input:focus:invalid {
     display: none;
 }
 
-.b-form button:hover {
-    border: 2px solid silver;
-    color: #fff;
-    cursor: pointer;
-    background: transparent;
+.b-form button:disabled {
+    opacity: 0.65;
 }
 
 .address {
@@ -154,6 +156,7 @@ input:focus:invalid {
     flex-direction: column;
     gap: 2rem;
     margin-top: 5rem;
+    margin-bottom: 0;
 }
 
 .address a {
@@ -168,7 +171,8 @@ input:focus:invalid {
 }
 
 .contact-section .subheadings-1 span::after,
-.contact-section .subheadings-2 span::after, .address a::after {
+.contact-section .subheadings-2 span::after,
+.address a::after {
     content: "";
     position: absolute;
     left: 0;
@@ -182,14 +186,20 @@ input:focus:invalid {
 }
 
 .contact-section .subheadings-1 span:hover::after,
-.contact-section .subheadings-2 span:hover::after,.address a:hover::after {
+.contact-section .subheadings-2 span:hover::after,
+.address a:hover::after {
     cursor: grab;
     transform: scaleX(1);
 }
 
-.address span{
+.social-handles {
+    margin-left: -1.5rem;
+}
+
+.address span {
     font-size: 1rem;
 }
+
 .icon-3d {
     padding: 10px;
     -webkit-animation: icon3d 200ms 10;
@@ -259,17 +269,25 @@ input:focus:invalid {
     .b-form .form-controls {
         width: 100%;
     }
-    .b-form #number{
+
+    .b-form #number {
         width: 100%;
     }
-    .b-form button{
+
+    .b-form button {
         font-size: 1rem;
         padding: 1rem;
     }
-    .address span{
+
+    .address span {
         font-size: 0.8rem;
     }
-    .address a{
+
+    .address a {
         font-size: 1.1rem;
+    }
+
+    .social-handles {
+        margin: -0.5rem;
     }
 }
