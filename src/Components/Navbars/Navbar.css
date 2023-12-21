@@ -56,18 +56,23 @@
     text-align: center;
     gap: 2vw;
 }
-.mob-nav{
+
+.mob-nav {
     display: none;
 }
+
 .nav-item {
-    padding: 1rem;
+    padding: 0.5rem;
     border-radius: 5px;
     width: max-content;
 }
-.nav-item a{
-    font-size: 1.2rem;
+
+.nav-item a {
+    font-size: 1rem;
 }
+
 .nav-item:hover {
+    color: white;
     cursor: pointer;
     font-weight: 700;
     background: linear-gradient(90deg, hsla(207, 96%, 69%, 1) 0%, hsla(220, 97%, 64%, 1) 0%, hsla(192, 89%, 63%, 1) 100%);
@@ -141,9 +146,11 @@
         transition: all 0.6s ease;
         z-index: 998;
     }
-    .mob-nav{
+
+    .mob-nav {
         display: flex;
     }
+
     .nav-links {
         font-weight: 600;
         text-align: left;

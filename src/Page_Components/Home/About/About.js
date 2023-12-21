@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import AB_DP from "../../../Assets/Profile_Imgs/Ayan.jpeg";
 import SA_DP from "../../../Assets/Profile_Imgs/Sanidhya.jpeg";
 import SJ_DP from "../../../Assets/Profile_Imgs/Srishti.jpeg";
-import About_Dummy from "../../../Assets/HomePage_Assets/About_dummy.jpeg";
+import About_Dummy from "../../../Assets/HomePage_Assets/About_dummy.jpg";
 import "./About.css";
 import "react-phone-number-input/style.css";
 
