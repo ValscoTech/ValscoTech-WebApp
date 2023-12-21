@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Footer.css";
 import { createDoc } from "../../Firebase_Config/firebaseConfig";
 import axios from "axios";
-
+import { Link } from "react-router-dom";
 
 const backendURL = "https://valscobackendtest.onrender.com";
 // const backendURL = "http://localhost:5000";
@@ -32,10 +32,11 @@ const Footer = () => {
       newContact.company = newContact.company.trim();
       let savedEmail = newContact.email;
       let savedName = newContact.name;
-      axios.post(backendURL, {
-        name: savedName,
-        email: savedEmail
-      })
+      axios
+        .post(backendURL, {
+          name: savedName,
+          email: savedEmail,
+        })
         .then(function (response) {
           createDoc(newContact);
           setIsSuccess(true);
@@ -163,7 +164,9 @@ const Footer = () => {
               <br />
               NOIDA, UTTAR PRADESH 201301
             </p>
-            <span>Privacy Policy</span>
+            <Link to="/PrivacyPage">
+              <span>Privacy Policy</span>
+            </Link>
           </div>
         </div>
         <div className="social-handles">
@@ -171,7 +174,7 @@ const Footer = () => {
             className="fa fa-twitter fa-4x icon-3d"
             style={{ fontSize: "48px" }}
           ></i>
-                    <a
+          <a
             href="https://www.facebook.com/profile.php?id=61550764448476&mibextid=ZbWKwL"
             target="_blank"
             rel="noopener noreferrer"

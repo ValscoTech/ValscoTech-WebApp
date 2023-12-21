@@ -72,7 +72,7 @@
     overflow-y: hidden;
 }
 
-span {
+.sp {
     padding-right: 20px;
 }
 
@@ -98,10 +98,12 @@ span {
     animation: moveLeft 700ms ease-in;
     margin-right: 5vw;
 }
-.text span{
+
+.text .sp {
     font-weight: 600;
     font-size: 120px;
 }
+
 .center {
     font-size: 120px;
 }
@@ -151,15 +153,15 @@ span {
 
 @media only screen and (min-width: 768px) and (max-width: 992px) {
 
-    span {
+    .sp {
         padding-right: 15px;
     }
-    
-    .text{
+
+    .text {
         margin-left: 40vw;
     }
 
-    .text span{
+    .text .sp {
         font-size: 100px;
     }
 
@@ -185,16 +187,18 @@ span {
 
 @media only screen and (min-width: 600px) and (max-width: 768px) {
 
-    span {
+    .sp {
         padding-right: 10px;
     }
 
     .text {
         margin-left: 40vw;
     }
-    .text span{
+
+    .text .sp {
         font-size: 90px;
     }
+
     .center {
         font-size: 90px;
     }
@@ -216,16 +220,18 @@ span {
 }
 
 @media only screen and (max-width: 600px) {
-    span {
+    .sp {
         padding-right: 8px;
     }
 
     .text {
         margin-left: 50vw;
-    }   
-    .text span{
+    }
+
+    .text .sp {
         font-size: 55px;
     }
+
     .center {
         font-size: 55px;
     }
@@ -247,9 +253,12 @@ span {
 }
 
 @media only screen and (max-width: 400px) {
-    .text span {
+    .text .sp {
         font-size: 36px;
-    };
+    }
+
+    ;
+
     .center {
         font-size: 36px;
     }

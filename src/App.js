@@ -14,6 +14,7 @@ import LoginBody from "./Page_Components/Login/Login";
 import Products from "./Page_Components/Home/HeroSections/Products";
 import ReadBlogs_Body from "./Page_Components/ReadBlog/ReadBlog";
 import Slider from "./Components/BlogSlider/Slider";
+import PrivacyPage_Body from "./Page_Components/PrivacyPage/Privacy";
 import UserNav from "./Components/Navbars/UserNav"; // Used for [Login page], [Create Blog Page] and [Read Blogs Page] only
 // const axios = require('axios');
 // General Components
@@ -27,6 +28,8 @@ import UserNav from "./Components/Navbars/UserNav"; // Used for [Login page], [C
 // Read Blogs Page Component
 
 // Detailed Blog Page Component
+
+// Privacy Page Component
 
 // axios.defaults.baseURL = "https://valscobackendtest.onrender.com"
 // axios.defaults.baseURL = "http://localhost:5000"
@@ -72,6 +75,16 @@ function App() {
             </>
           }
         />
+
+        <Route
+          path="/PrivacyPage"
+          element={
+            <>
+              <PrivacyPage_Body />
+            </>
+          }
+        />
+
         <Route
           path="/BlogHome"
           element={
