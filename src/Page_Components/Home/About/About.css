@@ -48,10 +48,8 @@
 }
 
 .moto-desc p {
-    text-align: justify;
-    word-break: break-word;
+    text-align: left;
     font-size: medium;
-    word-spacing: -1px;
 }
 
 .mb_scr {
@@ -206,7 +204,6 @@
 
     .moto-desc .mb_scr {
         word-spacing: 0;
-        word-break: break-all;
         display: block;
     }
 }
