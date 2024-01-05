@@ -62,14 +62,17 @@
 }
 
 .nav-item {
+    position: relative;
     padding: 0.5rem;
     border-radius: 5px;
     width: max-content;
+    cursor: pointer;
 }
 
 .nav-item a {
     font-size: 1rem;
 }
+
 
 .nav-item:hover {
     color: white;
