@@ -16,7 +16,13 @@ const Products = () => {
         />
         <link rel="canonical" href="/products" />
       </Helmet>
-      <section id="products" className="hero_products">
+      <section
+        id="products"
+        className="hero_products"
+        onClick={() => {
+          window.location.href = "http://www.jurident.com/";
+        }}
+      >
         <div className="iphone1">
           <img className="mock1" src={Iphone} alt="" />
         </div>

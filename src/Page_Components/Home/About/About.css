@@ -24,6 +24,7 @@
 }
 
 .moto-img {
+    border-radius: 20px;
     width: auto;
     box-shadow: 10px 20px 40px grey;
 }
@@ -45,12 +46,12 @@
     margin-bottom: 1rem;
     font-family: sans-serif;
 }
-.moto-desc p{
-    text-align: justify;
-    word-break: break-word;
+
+.moto-desc p {
+    text-align: left;
     font-size: medium;
-    word-spacing: -1px;
 }
+
 .mb_scr {
     display: none;
 }
@@ -96,11 +97,12 @@
     display: flex;
     flex-direction: column;
 }
+
 .member-card:hover {
     box-shadow: 5px 5px 15px black;
 }
 
-.member-card:hover .member-img img{
+.member-card:hover .member-img img {
     box-shadow: 5px 5px 15px black;
 }
 
@@ -124,6 +126,7 @@
 .member-card:hover .member-desc p {
     visibility: visible;
 }
+
 .bottom {
     background-color: black;
     color: silver;
@@ -131,18 +134,20 @@
 }
 
 @media screen and (max-width: 1024px) {
-    
+
     .moto-details {
         flex-direction: column;
     }
-    .moto-desc h3{
+
+    .moto-desc h3 {
         text-align: center;
     }
+
     .moto-desc {
         width: auto;
     }
 
-    .members{
+    .members {
         gap: 10rem;
     }
 
@@ -152,10 +157,11 @@
         max-width: 55%;
         padding: 0.5rem;
     }
+
     .member-card:hover {
         box-shadow: none;
-    }      
-    
+    }
+
     .member-desc {
         border-radius: 8%;
         margin-top: 5%;
@@ -167,6 +173,7 @@
         gap: 0.2rem;
         font-size: 1.25rem;
     }
+
     .member-desc p {
         font-size: 1.2rem;
         visibility: visible;
@@ -197,7 +204,6 @@
 
     .moto-desc .mb_scr {
         word-spacing: 0;
-        word-break: break-all;
         display: block;
     }
 }

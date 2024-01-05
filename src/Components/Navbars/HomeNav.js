@@ -6,7 +6,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import "./Navbar.css";
 import logo from "../../Assets/Company_Logo.png";
 
-const HomeNav = () => {
+const HomeNav = ({ linksList }) => {
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
@@ -17,7 +17,6 @@ const HomeNav = () => {
       <Helmet>
         <title>Valsco Technology - Navigation</title>
       </Helmet>
-
       <nav className="navbar">
         <div className="navbar-container">
           <Link to="landing" className="navbar-logo">
@@ -25,50 +24,31 @@ const HomeNav = () => {
             <h1>VALSCO TECHNOLOGY</h1>
           </Link>
           <div className="nav-menu">
-            <li className="nav-item">
-              <Link
-                to="products"
-                className={({ isActive }) =>
-                  "nav-links" + (isActive ? " activated" : "")
-                }
-                onClick={closeMobileMenu}
-              >
-                Products
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="about"
-                className={({ isActive }) =>
-                  "nav-links " + (isActive ? " activated" : "")
-                }
-                onClick={closeMobileMenu}
-              >
-                About Us
-              </Link>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                to="/BlogHome"
-                className={({ isActive }) =>
-                  "nav-links " + (isActive ? " activated" : "")
-                }
-                onClick={closeMobileMenu}
-              >
-                Blogs
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="contactuspage"
-                className={({ isActive }) =>
-                  "nav-links " + (isActive ? " activated" : "")
-                }
-                onClick={closeMobileMenu}
-              >
-                Contact Us
-              </Link>
-            </li>
+            {linksList.map((navItem, index) => (
+              <li className="nav-item" key={index}>
+                {navItem.type === "Link" ? (
+                  <Link
+                    to={navItem.link}
+                    className={({ isActive }) =>
+                      "nav-links" + (isActive ? " activated" : "")
+                    }
+                    onClick={closeMobileMenu}
+                  >
+                    {navItem.title}
+                  </Link>
+                ) : (
+                  <NavLink
+                    to={navItem.link}
+                    className={({ isActive }) =>
+                      "nav-links" + (isActive ? " activated" : "")
+                    }
+                    onClick={closeMobileMenu}
+                  >
+                    {navItem.title}
+                  </NavLink>
+                )}
+              </li>
+            ))}
           </div>
           <div className="menu-icon" onClick={handleClick}>
             {click ? <FaTimes /> : <FaBars />}
@@ -76,50 +56,31 @@ const HomeNav = () => {
         </div>
       </nav>
       <div className={click ? "mob-nav nav-menu active" : "mob-nav nav-menu"}>
-            <li className="nav-item">
+        {linksList.map((navItem, index) => (
+          <li className="nav-item" key={index}>
+            {navItem.type === "Link" ? (
               <Link
-                to="products"
+                to={navItem.link}
                 className={({ isActive }) =>
                   "nav-links" + (isActive ? " activated" : "")
                 }
                 onClick={closeMobileMenu}
               >
-                Products
+                {navItem.title}
               </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="about"
-                className={({ isActive }) =>
-                  "nav-links " + (isActive ? " activated" : "")
-                }
-                onClick={closeMobileMenu}
-              >
-                About Us
-              </Link>
-            </li>
-            <li className="nav-item">
+            ) : (
               <NavLink
-                to="/BlogHome"
+                to={navItem.link}
                 className={({ isActive }) =>
-                  "nav-links " + (isActive ? " activated" : "")
+                  "nav-links" + (isActive ? " activated" : "")
                 }
                 onClick={closeMobileMenu}
               >
-                Blogs
+                {navItem.title}
               </NavLink>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="contactuspage"
-                className={({ isActive }) =>
-                  "nav-links " + (isActive ? " activated" : "")
-                }
-                onClick={closeMobileMenu}
-              >
-                Contact Us
-              </Link>
-            </li>
+            )}
+          </li>
+        ))}
       </div>
     </>
   );
