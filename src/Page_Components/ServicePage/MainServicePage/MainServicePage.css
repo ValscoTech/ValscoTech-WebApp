@@ -245,3 +245,86 @@ details[open] p {
     font-weight: 700;
     text-transform: uppercase;
 }
+
+.course-register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: 7%;
+}
+
+.course-register-form h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.course-register-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 0;
+    width: 100%;
+}
+
+.course-register-form .Std-Name {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+
+.course-register-form .input-container {
+    position: relative;
+    flex: 1;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.course-register-form .input-container input {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--Input-border-color, #D2D5DA);
+    background: #FFF;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+}
+
+.course-register-form .input-container label {
+    position: absolute;
+    top: -0.8rem;
+    left: 1rem;
+    background: white;
+    padding: 0 10px;
+}
+
+.course-register-form .condition-check {
+    text-align: center;
+}
+
+.course-register-form .condition-check label {
+    position: initial;
+    background: transparent;
+}
+
+.course-register-form .condition-check input {
+    width: fit-content;
+}
+
+.form-closeBtn {
+    position: absolute;
+    right: 1rem;
+    top: -3rem;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.course-register-form button {
+    border-radius: 8px;
+    background: #FC346C;
+    padding: 20px 60px;
+    max-width: 380px;
+    width: 80%;
+    cursor: pointer;
+}

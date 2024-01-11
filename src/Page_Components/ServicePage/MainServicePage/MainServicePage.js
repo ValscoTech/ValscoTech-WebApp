@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import "./MainServicePage.css";
+import { IoCloseSharp } from "react-icons/io5";
 import heroImg from "../../../Assets/ServicesPage_Assets/HeroImg_Ninja.png";
 import { useLocation } from "react-router";
 import Footer from "../../../Components/Footer/Footer";
@@ -7,28 +8,217 @@ import { offeredService, faqs } from "./serviceData";
 const MainServicePage = () => {
   const service_steps = useLocation().state;
   console.log(service_steps);
-
+  const [clicked, setClicked] = useState(false);
+  const [details, setDetails] = useState({
+    fname: "",
+    lname: "",
+    email: "",
+    studyField: "",
+    city: "",
+    birthday: "",
+    nationality: "",
+    credibility: "",
+  });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(details);
+  };
+  const closeBtn = () => {
+    setDetails({
+      fname: "",
+      lname: "",
+      email: "",
+      studyField: "",
+      city: "",
+      birthday: "",
+      nationality: "",
+      credibility: "",
+    });
+    setClicked(!clicked);
+  };
   return (
     <>
       <div className="service-main-body">
-        <section className="service-hero">
-          <div className="service-hero-content">
-            <h1>
-              From novice to Ninja:
-              <br />
-              Unleash you coding <br /> Prowess
-            </h1>
+        {clicked ? (
+          <secction className="course-register-form">
+            <h2>Welcome</h2>
             <p>
-              with our accelerated <strong> web development </strong> bootcamp.
+              Fill in your correct and UP-TO-DATE details so that we may contact
+              you via email on further process
             </p>
-            <button className="start-today-btn" onClick={() => {}}>
-              Start Learning Today
-            </button>
-          </div>
-          <div className="section-hero-img">
-            <img src={heroImg} alt="Ninja" />
-          </div>
-        </section>
+            <form onSubmit={handleSubmit}>
+              <div className="Std-Name">
+                <div className="input-container">
+                  <input
+                    type="text"
+                    name="fname"
+                    id="fname"
+                    placeholder="Your name"
+                    value={details.fname}
+                    onChange={(e) =>
+                      setDetails((prev) => {
+                        return { ...prev, fname: e.target.value };
+                      })
+                    }
+                  />
+                  <label htmlFor="fname">
+                    First Name <span>*</span>
+                  </label>
+                </div>
+                <div className="input-container">
+                  <input
+                    type="text"
+                    name="lname"
+                    id="lname"
+                    placeholder="Your last name"
+                    value={details.lname}
+                    onChange={(e) =>
+                      setDetails((prev) => {
+                        return { ...prev, lname: e.target.value };
+                      })
+                    }
+                  />
+                  <label htmlFor="lname">
+                    Last Name <span>*</span>
+                  </label>
+                </div>
+              </div>
+              <div className="input-container">
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  placeholder="yourmail@gmail.com"
+                  value={details.email}
+                  onChange={(e) =>
+                    setDetails((prev) => {
+                      return { ...prev, email: e.target.value };
+                    })
+                  }
+                />
+                <label htmlFor="email">
+                  Email<span>*</span>
+                </label>
+              </div>
+              <div className="input-container">
+                <input
+                  type="text"
+                  name="studyField"
+                  id="studyField"
+                  value={details.studyField}
+                  onChange={(e) =>
+                    setDetails((prev) => {
+                      return { ...prev, studyField: e.target.value };
+                    })
+                  }
+                />
+                <label htmlFor="studyField">
+                  Field of Study <span>*</span>
+                </label>
+              </div>
+              <div className="input-container">
+                <input
+                  type="text"
+                  name="city"
+                  id="city"
+                  placeholder="Select city"
+                  value={details.city}
+                  onChange={(e) =>
+                    setDetails((prev) => {
+                      return { ...prev, city: e.target.value };
+                    })
+                  }
+                />
+                <label htmlFor="city">
+                  City <span>*</span>
+                </label>
+              </div>
+              <div className="input-container">
+                <input
+                  type="date"
+                  name="birthday"
+                  id="birthday"
+                  value={details.birthday}
+                  onChange={(e) =>
+                    setDetails((prev) => {
+                      return { ...prev, birthday: e.target.value };
+                    })
+                  }
+                />
+                <label htmlFor="birthday">
+                  Birthday<span>*</span>
+                </label>
+              </div>
+              <div className="input-container">
+                <input
+                  type="text"
+                  name="nationality"
+                  id="nationality"
+                  placeholder="Your Nationality"
+                  value={details.nationality}
+                  onChange={(e) =>
+                    setDetails((prev) => {
+                      return { ...prev, nationality: e.target.value };
+                    })
+                  }
+                />
+                <label htmlFor="nationality">
+                  Last Name <span>*</span>
+                </label>
+              </div>
+              <div className="input-container condition-check">
+                <input
+                  type="checkbox"
+                  name="credibility"
+                  id="credibility"
+                  value={details.credibility}
+                  onChange={(e) =>
+                    setDetails((prev) => {
+                      return { ...prev, credibility: e.target.value };
+                    })
+                  }
+                />
+                <label htmlFor="credibility">
+                  I vouch that all the information i have filled above is
+                  completely true and Proceed to Payment
+                </label>
+              </div>
+              <button type="submit">Enter</button>
+            </form>
+            <IoCloseSharp
+              className="form-closeBtn"
+              onClick={() => {
+                closeBtn();
+              }}
+            />
+          </secction>
+        ) : (
+          <section className="service-hero">
+            <div className="service-hero-content">
+              <h1>
+                From novice to Ninja:
+                <br />
+                Unleash you coding <br /> Prowess
+              </h1>
+              <p>
+                with our accelerated <strong> web development </strong>{" "}
+                bootcamp.
+              </p>
+              <button
+                className="start-today-btn"
+                onClick={() => {
+                  setClicked(!clicked);
+                }}
+              >
+                Start Learning Today
+              </button>
+            </div>
+            <div className="section-hero-img">
+              <img src={heroImg} alt="Ninja" />
+            </div>
+          </section>
+        )}
+
         <section className="about-service">
           {service_steps.map((step, i) => (
             <div
@@ -88,7 +278,6 @@ const MainServicePage = () => {
           </p>
         </section>
       </div>
-
       <Footer />
     </>
   );
