@@ -3,15 +3,52 @@ import { useNavigate } from "react-router-dom";
 import "./ServiceDisplay.css";
 import { services } from "./servicesData";
 import Footer from "../../../Components/Footer/Footer";
+import { Swiper, SwiperSlide } from "swiper/react";
+import {
+  Autoplay,
+  EffectCoverflow,
+  Navigation,
+  Pagination,
+} from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+
 const Services = () => {
   const navigate = useNavigate();
   return (
     <>
       <div className="services-container-body">
         <h1>Explore Courses</h1>
-        <div className="services-swiper">
+        <Swiper
+          modules={[Autoplay, Pagination, EffectCoverflow]}
+          grabCursor={true}
+          loop={true}
+          slidesPerView={"auto"}
+          pagination={{
+            clickable: true,
+          }}
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 50,
+            },
+            1280: {
+              slidesPerView: 4,
+              spaceBetween: 50,
+            },
+          }}
+          className=" courses-swiper"
+        >
           {services.map((service, index) => (
-            <div key={index} className="service-wrapper">
+            <SwiperSlide key={index} className="service-wrapper">
               <div className="service-card-img">
                 <img src={service.imgLink} alt="" />
               </div>
@@ -32,9 +69,9 @@ const Services = () => {
                   </button>
                 </div>
               </div>
-            </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
       <Footer />
     </>

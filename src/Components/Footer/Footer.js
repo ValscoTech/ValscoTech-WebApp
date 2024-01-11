@@ -164,9 +164,17 @@ const Footer = () => {
               <br />
               NOIDA, UTTAR PRADESH 201301
             </p>
-            <Link to="/PrivacyPage">
-              <span>Privacy Policy</span>
-            </Link>
+            <div className="policies">
+              <Link to="/PrivacyPage">
+                <span>Privacy Policy</span>
+              </Link>
+              <Link to="/RefundPolicy">
+                <span>Refund and Cancellation</span>
+              </Link>
+              <Link to="/T&C">
+                <span>Terms and Conditions</span>
+              </Link>
+            </div>
           </div>
         </div>
         <div className="social-handles">

@@ -1,0 +1,58 @@
+.privacypage-container {
+    padding: 2rem 5vw;
+}
+
+.privacypage-container ul[type="square"],
+ol {
+    margin: 1rem 0;
+    padding: 0 2rem;
+}
+
+.privacypage-container h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.privacypage-container .updatedOn {
+    margin: 3rem 0;
+}
+
+.privacypage-container li {
+    margin-top: 1rem;
+}
+
+.privacypage-container section {
+    margin: 2rem 0;
+}
+
+.privacypage-container h2 {
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.privacypage-container h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 1.5rem 1.5vw;
+}
+
+.privacypage-container section p {
+    margin: 1.5rem 1.5vw;
+}
+
+.privacypage-container section p strong,
+.privacypage-container section p u {
+    font-weight: 600;
+}
+
+.privacypage-container section a {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+    margin: 0 6px;
+}
+
+.privacypage-container section p span {
+    display: block;
+}

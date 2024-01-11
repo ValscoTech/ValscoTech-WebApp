@@ -1,0 +1,19 @@
+.refundPage-container {
+    margin: 2rem 5vw;
+}
+
+.refundPage-container div {
+    margin: 2rem 0;
+}
+
+.refundPage-container h1 {
+    font-weight: 600;
+    font-size: 3rem;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+}
+
+.refundPage-container h2 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}

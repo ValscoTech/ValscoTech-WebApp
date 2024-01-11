@@ -15,6 +15,8 @@ import Products from "./Page_Components/Home/HeroSections/Products";
 import ReadBlogsBody from "./Page_Components/ReadBlog/ReadBlog";
 import Slider from "./Components/BlogSlider/Slider";
 import PrivacyPageBody from "./Page_Components/PrivacyPage/Privacy";
+import RefundPageBody from "./Page_Components/RefundPage/RefundPage";
+import TermsAndConditionPageBody from "./Page_Components/TermsConditionPage/TermsCondition";
 import ServicePageBody from "./Page_Components/ServicePage/MainServicePage/MainServicePage";
 import ServicesDisplayBody from "./Page_Components/ServicePage/ServicesDisplayPage/ServicesDisplay";
 import UserNav from "./Components/Navbars/UserNav"; // Used for [Login page], [Create Blog Page] and [Read Blogs Page] only
@@ -101,6 +103,22 @@ function App() {
           element={
             <>
               <PrivacyPageBody />
+            </>
+          }
+        />
+        <Route
+          path="/RefundPolicy"
+          element={
+            <>
+              <RefundPageBody />
+            </>
+          }
+        />
+        <Route
+          path="/T&C"
+          element={
+            <>
+              <TermsAndConditionPageBody />
             </>
           }
         />

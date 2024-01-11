@@ -200,6 +200,10 @@ input:focus:invalid {
     font-size: 1rem;
 }
 
+.policies {
+    margin-bottom: 2rem;
+}
+
 .icon-3d {
     padding: 10px;
     -webkit-animation: icon3d 200ms 10;

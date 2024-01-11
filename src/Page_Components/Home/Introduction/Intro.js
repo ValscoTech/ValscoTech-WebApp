@@ -30,18 +30,6 @@ function Intro() {
             specialize in developing software solutions tailored to the unique
             needs of our clients.
           </p>
-
-          <div
-            className="learn_btn"
-            onClick={() => {
-              navigate("/Services");
-            }}
-          >
-            Learn more
-            <IconContext.Provider value={{ className: "learn_btn_icon" }}>
-              <RxOpenInNewWindow />
-            </IconContext.Provider>
-          </div>
         </div>
       </section>
     </>
