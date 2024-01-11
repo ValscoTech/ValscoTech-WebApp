@@ -64,12 +64,12 @@ export const LoadingScreen = () => {
               <video src="tv.mp3"></video>
             </div>
             <div className="text">
-              <span className="center">V</span>
-              <span className="hide">A</span>
-              <span className="hide">L</span>
-              <span className="hide">S</span>
-              <span className="hide">C</span>
-              <span className="hide">O</span>
+              <span className="center sp">V</span>
+              <span className="hide sp">A</span>
+              <span className="hide sp">L</span>
+              <span className="hide sp">S</span>
+              <span className="hide sp">C</span>
+              <span className="hide sp">O</span>
             </div>
           </div>
         ) : (
