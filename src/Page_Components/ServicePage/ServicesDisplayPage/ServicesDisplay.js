@@ -4,12 +4,7 @@ import "./ServiceDisplay.css";
 import { services } from "./servicesData";
 import Footer from "../../../Components/Footer/Footer";
 import { Swiper, SwiperSlide } from "swiper/react";
-import {
-  Autoplay,
-  EffectCoverflow,
-  Navigation,
-  Pagination,
-} from "swiper/modules";
+import { Autoplay, EffectCoverflow, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -64,7 +59,10 @@ const Services = () => {
                   >
                     Check it!
                   </button>
-                  <button className="register" onClick={() => navigate(`/`)}>
+                  <button
+                    className="register"
+                    onClick={() => navigate(`/Service`)}
+                  >
                     Register
                   </button>
                 </div>

@@ -577,10 +577,10 @@ const PrivacyPage = () => {
             YOU?
           </h2>
           <p>
-            You have the right to request access to the personal information we
-            collect from you, change that information, or delete it. To request
-            to review, update, or delete your personal information, please
-            visit: __________.
+            Please send us a mail regarding this concern at{" "}
+            <a href="mailto:connect@valscotech.com">connect@valscotech.com</a>{" "}
+            and we will update you with appropriate response as soon as
+            possible.
           </p>
         </section>
       </div>

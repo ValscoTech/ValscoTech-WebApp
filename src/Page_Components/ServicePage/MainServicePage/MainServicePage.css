@@ -112,12 +112,13 @@
 }
 
 .to_enroll {
-    width: 100%;
+    width: 50%;
     padding: 2rem;
     text-align: center;
     border-radius: 10px;
     border: 1px solid #FC346C;
     background: linear-gradient(90deg, #D64045 5.38%, #EE395E 62.94%, #FE346E 100%);
+    margin: auto;
 }
 
 .to_enroll h2 {
@@ -222,6 +223,13 @@ details[open] p {
     padding: .5em 1em;
     color: #fff;
 
+}
+
+.offer-timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
 .offer-timer h3 {

@@ -7,7 +7,6 @@ import Footer from "../../../Components/Footer/Footer";
 import { offeredService, faqs } from "./serviceData";
 const MainServicePage = () => {
   const service_steps = useLocation().state;
-  console.log(service_steps);
   const [clicked, setClicked] = useState(false);
   const [details, setDetails] = useState({
     fname: "",
@@ -21,7 +20,6 @@ const MainServicePage = () => {
   });
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(details);
   };
   const closeBtn = () => {
     setDetails({
@@ -218,7 +216,6 @@ const MainServicePage = () => {
             </div>
           </section>
         )}
-
         <section className="about-service">
           {service_steps.map((step, i) => (
             <div
@@ -245,8 +242,14 @@ const MainServicePage = () => {
           ))}
         </section>
         <section className="service-offers">
-          <button className="to_enroll">
-            <h2>Learn to Develop Great Websites Pay Rs 99</h2>
+          <button
+            className="to_enroll"
+            onClick={() => {
+              setClicked(!clicked);
+              window.scrollTo(0, 0);
+            }}
+          >
+            <h2>Learn to Develop Great Websites</h2>
           </button>
           <div className="promting-offers">
             {offeredService.map((off, index) => (
@@ -270,8 +273,15 @@ const MainServicePage = () => {
         <section className="offer-timer">
           <h3>Time is Running Out, Grab You Spot</h3>
           <div className="time">02: 59: 59</div>
-          <button className="to_enroll" style={{ margin: "3rem 0" }}>
-            <h2>Learn to Develop Great Websites Pay Rs 99</h2>
+          <button
+            className="to_enroll"
+            style={{ margin: "3rem 0" }}
+            onClick={() => {
+              setClicked(!clicked);
+              window.scrollTo(0, 0);
+            }}
+          >
+            <h2>Learn to Develop Great Websites</h2>
           </button>
           <p className="offer-notice">
             Once the timer hits zero, pricing will be increased to 899.00/-
