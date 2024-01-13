@@ -1,14 +1,11 @@
 .service-main-body {
-    padding: 7%;
-    padding-top: 0;
+    padding: 4rem 7%;
 }
 
 .service-hero {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 100vh;
-    margin-top: -3%;
 }
 
 .service-hero-content {
@@ -112,8 +109,7 @@
 }
 
 .to_enroll {
-    width: 50%;
-    padding: 2rem;
+    padding: 4rem;
     text-align: center;
     border-radius: 10px;
     border: 1px solid #FC346C;
@@ -167,7 +163,7 @@
 }
 
 .FAQ {
-    margin: 6% 0;
+    margin: 6rem 0;
 }
 
 .FAQ h2 {
@@ -194,6 +190,7 @@ summary {
     list-style: none;
     display: flex;
     justify-content: space-between;
+    padding-right: 0;
 }
 
 summary::-webkit-details-marker {
@@ -214,8 +211,10 @@ details[open] summary {
 
 details[open] summary:after {
     content: "";
-    /* bottom: 1rem; */
-    transform: rotate(180deg);
+    border-top: 15px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 15px solid white;
     transition: 0.5s ease-in-out;
 }
 
@@ -260,11 +259,12 @@ details[open] p {
     align-items: center;
     position: relative;
     margin-top: 7%;
+    gap: 1rem;
 }
 
 .course-register-form h2 {
     text-align: center;
-    font-size: 32px;
+    font-size: 2.5rem;
     font-weight: 600;
 }
 
@@ -334,5 +334,94 @@ details[open] p {
     padding: 20px 60px;
     max-width: 380px;
     width: 80%;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 600;
     cursor: pointer;
+}
+
+@media screen and (max-width: 1080px) {
+
+    .section-hero-img,
+    .steps-details {
+        width: auto;
+    }
+
+    .steps-image img {
+        width: 100%;
+    }
+
+    .steps-details h2 {
+        font-size: 2rem;
+    }
+
+    .steps-details ul li,
+    .arrow {
+        font-size: 18px;
+    }
+
+    .offer-div {
+        max-width: none;
+        width: 100%;
+    }
+
+    .offer-timer .time {
+        font-size: 7rem;
+    }
+
+    .offer-timer .to_enroll {
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .service-hero {
+        flex-direction: column-reverse;
+    }
+
+    .course-register-form .Std-Name {
+        flex-direction: column;
+    }
+
+    .steps-image {
+        width: 100%;
+    }
+
+    .about-service-steps.odd,
+    .about-service-steps {
+        flex-direction: column;
+    }
+
+    .steps-details h2 {
+        font-size: 2rem;
+    }
+
+    .steps-details ul li,
+    .arrow {
+        font-size: 18px;
+    }
+
+    .steps-image img {
+        width: 100%;
+    }
+
+    .to_enroll {
+        width: 100%;
+        margin: 4rem 0;
+        padding: 2rem;
+    }
+
+    .to_enroll h2 {
+        font-size: 1.8rem;
+    }
+
+    .offer-timer h3 {
+        font-size: 2rem;
+    }
+
+    .offer-timer .time {
+        font-size: 3rem;
+    }
+
 }

@@ -73,6 +73,16 @@
     font-size: 1rem;
 }
 
+.register-navbtn {
+    border-radius: 8px;
+    background: #FC346C;
+    cursor: pointer;
+    border: 2px solid #FC346C;
+}
+
+.register-navbtn a {
+    color: white;
+}
 
 .nav-item:hover {
     color: white;
@@ -83,6 +93,15 @@
 
 .nav-item:hover a {
     color: white;
+}
+
+.register-navbtn:hover {
+    background: transparent;
+    border: 2px solid #FC346C;
+}
+
+.register-navbtn:hover a {
+    color: black;
 }
 
 .nav-links {

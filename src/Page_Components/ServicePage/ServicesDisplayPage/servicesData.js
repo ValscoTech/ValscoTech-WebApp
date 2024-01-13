@@ -9,7 +9,7 @@ import backend_Illustration from "../../../Assets/ServicesPage_Assets/BackendDev
 import android_Illustration from "../../../Assets/ServicesPage_Assets/AndroidDevelopment.png";
 import UI_UX_Illustration from "../../../Assets/ServicesPage_Assets/UI-UX-Designing.png";
 
-const frontend_data = [
+export const frontend_data = [
   {
     img: illustartion_1,
     title: "DESIGNING A WEBSITE",
@@ -65,7 +65,7 @@ const frontend_data = [
 const backend_data = [
   {
     img: illustartion_1,
-    title: "DESIGNING A WEBSITE",
+    title: "WEBSITE",
     points: [
       "UI/UX Fundamentals",
       "Introduction to HTML",

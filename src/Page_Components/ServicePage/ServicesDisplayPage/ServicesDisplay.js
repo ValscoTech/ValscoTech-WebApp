@@ -61,7 +61,9 @@ const Services = () => {
                   </button>
                   <button
                     className="register"
-                    onClick={() => navigate(`/Service`)}
+                    onClick={() =>
+                      navigate(`/RegisterCourse`, { state: service.data })
+                    }
                   >
                     Register
                   </button>
