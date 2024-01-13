@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet-async";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "./Navbar.css";
 import logo from "../../Assets/Company_Logo.png";
-
+import { frontend_data } from "../../Page_Components/ServicePage/ServicesDisplayPage/servicesData";
 const HomeNav = ({ linksList }) => {
   const [click, setClick] = useState(false);
 
@@ -25,7 +25,14 @@ const HomeNav = ({ linksList }) => {
           </Link>
           <div className="nav-menu">
             {linksList.map((navItem, index) => (
-              <li className="nav-item" key={index}>
+              <li
+                className={
+                  navItem.title === "Register"
+                    ? "register-navbtn nav-item"
+                    : "nav-item"
+                }
+                key={index}
+              >
                 {navItem.type === "Link" ? (
                   <Link
                     to={navItem.link}
@@ -39,6 +46,7 @@ const HomeNav = ({ linksList }) => {
                 ) : (
                   <NavLink
                     to={navItem.link}
+                    state={navItem.title === "Register" ? frontend_data : {}}
                     className={({ isActive }) =>
                       "nav-links" + (isActive ? " activated" : "")
                     }
@@ -71,6 +79,7 @@ const HomeNav = ({ linksList }) => {
             ) : (
               <NavLink
                 to={navItem.link}
+                state={navItem.title === "Register" ? frontend_data : {}}
                 className={({ isActive }) =>
                   "nav-links" + (isActive ? " activated" : "")
                 }

@@ -165,7 +165,12 @@ const Footer = () => {
               NOIDA, UTTAR PRADESH 201301
             </p>
             <div className="policies">
-              <Link to="/PrivacyPage">
+              <Link
+                to="/PrivacyPage"
+                onClick={() => {
+                  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+                }}
+              >
                 <span>Privacy Policy</span>
               </Link>
               <Link to="/RefundPolicy">

@@ -17,7 +17,9 @@ import Slider from "./Components/BlogSlider/Slider";
 import PrivacyPageBody from "./Page_Components/PrivacyPage/Privacy";
 import RefundPageBody from "./Page_Components/RefundPage/RefundPage";
 import TermsAndConditionPageBody from "./Page_Components/TermsConditionPage/TermsCondition";
-import ServicePageBody from "./Page_Components/ServicePage/MainServicePage/MainServicePage";
+import RegistrationForm from "./Page_Components/ServicePage/MainServicePage/RegistrationForm";
+import ServicePageHero from "./Page_Components/ServicePage/MainServicePage/ServicePageHero";
+import ServiceBody from "./Page_Components/ServicePage/MainServicePage/ServiceBody";
 import ServicesDisplayBody from "./Page_Components/ServicePage/ServicesDisplayPage/ServicesDisplay";
 import UserNav from "./Components/Navbars/UserNav"; // Used for [Login page], [Create Blog Page] and [Read Blogs Page] only
 // const axios = require('axios');
@@ -70,7 +72,7 @@ function App() {
     { title: "Home", link: "/", type: "NavLink" },
     { title: "Courses", link: "/Courses", type: "NavLink" },
     { title: "Contact Us", link: "contactuspage", type: "Link" },
-    { title: "Register", link: "/", type: "NavLink" },
+    { title: "Register", link: "/RegisterCourse", type: "NavLink" },
   ];
 
   const linksList = [homeNav, coursesNav, serviceNav];
@@ -268,13 +270,44 @@ function App() {
                 alertColor={alertColor}
                 setAlertColor={setAlertColor}
               />
-              <ServicePageBody
-                authenticated={authenticated}
+              <div className="service-main-body">
+                <ServicePageHero />
+                <ServiceBody
+                  formVisible={true}
+                  authenticated={authenticated}
+                  alertMsg={alertMsg}
+                  setAlertMsg={setAlertMsg}
+                  alertColor={alertColor}
+                  setAlertColor={setAlertColor}
+                />
+              </div>
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/RegisterCourse"
+          element={
+            <>
+              <HomeNav linksList={linksList[2]} />
+              <Alert
                 alertMsg={alertMsg}
                 setAlertMsg={setAlertMsg}
                 alertColor={alertColor}
                 setAlertColor={setAlertColor}
               />
+              <div className="service-main-body">
+                <RegistrationForm />
+                <ServiceBody
+                  formVisible={true}
+                  authenticated={authenticated}
+                  alertMsg={alertMsg}
+                  setAlertMsg={setAlertMsg}
+                  alertColor={alertColor}
+                  setAlertColor={setAlertColor}
+                />
+              </div>
+              <Footer />
             </>
           }
         />
