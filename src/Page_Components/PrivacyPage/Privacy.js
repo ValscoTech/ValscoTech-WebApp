@@ -1,32 +1,28 @@
-import React, { useEffect } from "react";
-import "./privacyPage.css";
+import React from "react";
 import { Link } from "react-scroll";
 import { Link as PGLINK } from "react-router-dom";
+import "./privacyPage.css";
 const PrivacyPage = () => {
-  useEffect(() => {
-    // 👇️ scroll to top on page load
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  }, []);
   return (
     <>
-      <div className="privacypage-container">
-        <PGLINK
-          to="/"
-          className="nav-item"
-          style={{
-            border: "1px solid black",
-            position: "absolute",
-            top: "1rem",
-            width: "fit-content",
-            left: "1rem",
-            padding: "0.5rem",
-          }}
-        >
-          Home
-        </PGLINK>
+      <PGLINK
+        to="/"
+        className="nav-item"
+        style={{
+          border: "1px solid black",
+          position: "absolute",
+          top: "1rem",
+          width: "fit-content",
+          left: "1rem",
+          padding: "0.5rem",
+        }}
+      >
+        Home
+      </PGLINK>
+      <section className="privacypage-container">
         <h1>PRIVACY POLICY</h1>
-        <div className="updatedOn">Last updated December 20, 2023</div>
-        <div className="notice">
+        <p className="updatedOn">Last updated December 20, 2023</p>
+        <section className="notice">
           This privacy notice for Valsco Technology Pvt. Ltd. ('we', 'us', or
           'our'), describes how and why we might collect, store, use, and/or
           share ('process') your information when you use our services
@@ -41,15 +37,17 @@ const PrivacyPage = () => {
               marketing, or events
             </li>
           </ul>
-          Questions or concerns? Reading this privacy notice will help you
-          understand your privacy rights and choices. If you do not agree with
-          our policies and practices, please do not use our Services. If you
-          still have any questions or concerns, please contact us at
-          juridentyi@gmail.com.
-        </div>
+          <p className="para">
+            Questions or concerns? Reading this privacy notice will help you
+            understand your privacy rights and choices. If you do not agree with
+            our policies and practices, please do not use our Services. If you
+            still have any questions or concerns, please contact us at{" "}
+            <a href="mailto:connect@valscotech.com">connect@valscotech.com</a>.
+          </p>
+        </section>
         <section className="summary">
           <h2>SUMMARY OF KEY POINTS</h2>
-          <p style={{ margin: "0" }}>
+          <p className="para" style={{ margin: "0" }}>
             This summary provides key points from our privacy notice, but you
             can find out more details about any of these topics by clicking the
             link following each key point or by using our{" "}
@@ -129,9 +127,9 @@ const PrivacyPage = () => {
             </li>
             <li>
               <strong>How do you exercise your rights? </strong>The easiest way
-              to exercise your rights is by visiting __________, or by
-              contacting us. We will consider and act upon any request in
-              accordance with applicable data protection laws.
+              to exercise your rights is by contacting us. We will consider and
+              act upon any request in accordance with applicable data protection
+              laws.
             </li>
             <li>
               <strong>
@@ -203,20 +201,20 @@ const PrivacyPage = () => {
           <h2>1. WHAT INFORMATION DO WE COLLECT?</h2>
           <div className="points" id="personalInfo">
             <h3>Personal information you disclose to us</h3>
-            <p>
+            <p classname="para">
               <i>
                 <strong>In Short: </strong>
               </i>
               We collect personal information that you provide to us.
             </p>
-            <p>
+            <p classname="para">
               We collect personal information that you voluntarily provide to us
               when you register on the Services, express an interest in
               obtaining information about us or our products and Services, when
               you participate in activities on the Services, or otherwise when
               you contact us.
             </p>
-            <p>
+            <div className="para">
               Personal Information Provided by You. The personal information
               that we collect depends on the context of your interactions with
               us and the Services, the choices you make, and the products and
@@ -229,16 +227,16 @@ const PrivacyPage = () => {
                 <li>job titles</li>
                 <li>contact or authentication data</li>
               </ul>
-            </p>
-            <p>
+            </div>
+            <div className="para">
               Sensitive Information. When necessary, with your consent or as
               otherwise permitted by applicable law, we process the following
               categories of sensitive information:
               <ul type="square">
                 <li> legal data</li>
               </ul>
-            </p>
-            <p>
+            </div>
+            <p classname="para">
               Social Media Login Data. We may provide you with the option to
               register with us using your existing social media account details,
               like your Facebook, Twitter, or other social media account. If you
@@ -247,7 +245,7 @@ const PrivacyPage = () => {
               <Link to="handling">'HOW DO WE HANDLE YOUR SOCIAL LOGINS?'</Link>
               below.
             </p>
-            <p>
+            <div className="para">
               Application Data. If you use our application(s), we also may
               collect the following information if you choose to provide us with
               access or permission:
@@ -270,8 +268,8 @@ const PrivacyPage = () => {
               This information is primarily needed to maintain the security and
               operation of our application(s), for troubleshooting, and for our
               internal analytics and reporting purposes.
-            </p>
-            <p>
+            </div>
+            <p classname="para">
               All personal information that you provide to us must be true,
               complete, and accurate, and you must notify us of any changes to
               such personal information.
@@ -279,14 +277,14 @@ const PrivacyPage = () => {
           </div>
           <div className="points" id="infoCollected">
             <h3>Information collected from other sources</h3>
-            <p>
+            <p classname="para">
               <i>
                 <strong>In Short: </strong>
               </i>
               We may collect limited data from public databases, marketing
               partners, social media platforms, and other outside sources.
             </p>
-            <p>
+            <p classname="para">
               In order to enhance our ability to provide relevant marketing,
               offers, and services to you and update our records, we may obtain
               information about you from other sources, such as public
@@ -307,7 +305,7 @@ const PrivacyPage = () => {
         </section>
         <section id="process">
           <h2>2. HOW DO WE PROCESS YOUR INFORMATION?</h2>
-          <p>
+          <p classname="para">
             <i>
               <strong>In Short: </strong>
             </i>
@@ -316,7 +314,7 @@ const PrivacyPage = () => {
             and to comply with law. We may also process your information for
             other purposes with your consent
           </p>
-          <p>
+          <div className="para">
             We process your personal information for a variety of reasons,
             depending on how you interact with our Services, including:
             <ul type="square">
@@ -344,18 +342,18 @@ const PrivacyPage = () => {
                 improve our Services, products, marketing, and your experience.
               </li>
             </ul>
-          </p>
+          </div>
         </section>
         <section id="sharedWith">
           <h2>3. WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?</h2>
-          <p>
+          <p classname="para">
             <i>
               <strong>In Short: </strong>
             </i>
             We may share information in specific situations described in this
             section and/or with the following third parties.
           </p>
-          <p>
+          <div className="para">
             We may need to share your personal information in the following
             situations:
             <ul type="square">
@@ -366,18 +364,18 @@ const PrivacyPage = () => {
                 our business to another company.
               </li>
             </ul>
-          </p>
+          </div>
         </section>
         <section id="handling">
           <h2>4. HOW DO WE HANDLE YOUR SOCIAL LOGINS?</h2>
-          <p>
+          <p classname="para">
             <i>
               <strong>In Short: </strong>
             </i>
             If you choose to register or log in to our Services using a social
             media account, we may have access to certain information about you.
           </p>
-          <p>
+          <p classname="para">
             Our Services offer you the ability to register and log in using your
             third-party social media account details (like your Facebook or
             Twitter logins). Where you choose to do this, we will receive
@@ -388,7 +386,7 @@ const PrivacyPage = () => {
             other information you choose to make public on such a social media
             platform.
           </p>
-          <p>
+          <p classname="para">
             We will use the information we receive only for the purposes that
             are described in this privacy notice or that are otherwise made
             clear to you on the relevant Services. Please note that we do not
@@ -401,7 +399,7 @@ const PrivacyPage = () => {
         </section>
         <section id="infoPeriod">
           <h2>5. HOW LONG DO WE KEEP YOUR INFORMATION?</h2>
-          <p>
+          <p classname="para">
             <i>
               <strong>In Short: </strong>
             </i>
@@ -409,7 +407,7 @@ const PrivacyPage = () => {
             purposes outlined in this privacy notice unless otherwise required
             by law.
           </p>
-          <p>
+          <p classname="para">
             We will only keep your personal information for as long as it is
             necessary for the purposes set out in this privacy notice, unless a
             longer retention period is required or permitted by law (such as
@@ -417,7 +415,7 @@ const PrivacyPage = () => {
             notice will require us keeping your personal information for longer
             than the period of time in which users have an account with us.
           </p>
-          <p>
+          <p classname="para">
             When we have no ongoing legitimate business need to process your
             personal information, we will either delete or anonymise such
             information, or, if this is not possible (for example, because your
@@ -428,14 +426,14 @@ const PrivacyPage = () => {
         </section>
         <section id="safetyMeasures">
           <h2>6. HOW DO WE KEEP YOUR INFORMATION SAFE?</h2>
-          <p>
+          <p classname="para">
             <i>
               <strong>In Short: </strong>
             </i>
             We aim to protect your personal information through a system of
             organisational and technical security measures.
           </p>
-          <p>
+          <p classname="para">
             We have implemented appropriate and reasonable technical and
             organisational security measures designed to protect the security of
             any personal information we process. However, despite our safeguards
@@ -452,14 +450,14 @@ const PrivacyPage = () => {
         </section>
         <section id="minorsInfo">
           <h2>7. DO WE COLLECT INFORMATION FROM MINORS?</h2>
-          <p>
+          <p classname="para">
             <i>
               <strong>In Short: </strong>
             </i>
             We do not knowingly collect data from or market to children under 18
             years of age.
           </p>
-          <p>
+          <p classname="para">
             We do not knowingly solicit data from or market to children under 18
             years of age. By using the Services, you represent that you are at
             least 18 or that you are the parent or guardian of such a minor and
@@ -468,18 +466,19 @@ const PrivacyPage = () => {
             been collected, we will deactivate the account and take reasonable
             measures to promptly delete such data from our records. If you
             become aware of any data we may have collected from children under
-            age 18, please contact us at juridentyi@gmail.com.
+            age 18, please contact us at{" "}
+            <a href="mailto:connect@valscotech.com">connect@valscotech.com</a> .
           </p>
         </section>
         <section id="privacyRights">
           <h2>8. WHAT ARE YOUR PRIVACY RIGHTS?</h2>
-          <p>
+          <p classname="para">
             <i>
               <strong>In Short: </strong>
             </i>
             You may review, change, or terminate your account at any time.
           </p>
-          <p>
+          <p classname="para">
             <u>Withdrawing your consent:</u> If we are relying on your consent
             to process your personal information, which may be express and/or
             implied consent depending on the applicable law, you have the right
@@ -491,14 +490,14 @@ const PrivacyPage = () => {
             </Link>{" "}
             below.
           </p>
-          <p>
+          <p classname="para">
             However, please note that this will not affect the lawfulness of the
             processing before its withdrawal nor, when applicable law allows,
             will it affect the processing of your personal information conducted
             in reliance on lawful processing grounds other than consent.
           </p>
           <h3>Account Information</h3>
-          <p>
+          <div className="para">
             If you would at any time like to review or change the information in
             your account or terminate your account, you can:
             <ul type="square">
@@ -513,15 +512,16 @@ const PrivacyPage = () => {
             fraud, troubleshoot problems, assist with any investigations,
             enforce our legal terms and/or comply with applicable legal
             requirements.
-          </p>
-          <p>
+          </div>
+          <p classname="para">
             If you have questions or comments about your privacy rights, you may
-            email us at juridentyi@gmail.com.
+            email us at{" "}
+            <a href="mailto:connect@valscotech.com">connect@valscotech.com</a> .
           </p>
         </section>
         <section id="dntControls">
           <h2>9. CONTROLS FOR DO-NOT-TRACK FEATURES</h2>
-          <p>
+          <p classname="para">
             Most web browsers and some mobile operating systems and mobile
             applications include a Do-Not-Track ('DNT') feature or setting you
             can activate to signal your privacy preference not to have data
@@ -537,7 +537,7 @@ const PrivacyPage = () => {
         </section>
         <section id="comitment">
           <h2>10. WHAT IS OUR COMPANY'S COMMITMENT TO YOUR PRIVACY?</h2>
-          <p>
+          <p classname="para">
             We can not access to your data. Your own data is safe and secure, no
             one apart from you can view,edit or delete your data. We ensure and
             provide the Blockchain algorithm to provide the security to you
@@ -546,13 +546,13 @@ const PrivacyPage = () => {
         </section>
         <section className="updates">
           <h2>11. DO WE MAKE UPDATES TO THIS NOTICE?</h2>
-          <p>
+          <p classname="para">
             <i>
               <strong>In Short: </strong>Yes, we will update this notice as
               necessary to stay compliant with relevant laws.
             </i>
           </p>
-          <p>
+          <p classname="para">
             We may update this privacy notice from time to time. The updated
             version will be indicated by an updated 'Revised' date and the
             updated version will be effective as soon as it is accessible. If we
@@ -565,14 +565,16 @@ const PrivacyPage = () => {
         </section>
         <section className="contactHow">
           <h2>12. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</h2>
-          <p>
+          <p classname="para">
             If you have questions or comments about this notice, you may email
-            us at juridentyi@gmail.com or contact us by post at:
+            us at{" "}
+            <a href="mailto:connect@valscotech.com">connect@valscotech.com</a>{" "}
+            or contact us by post at:
           </p>
-          <p>
+          <p classname="para">
             <span>Valsco Technology Pvt. Ltd.</span>
-            <span>Purvanchal Royal City Chi 5 GREATER</span>
-            <span>NOIDA, UTTAR PRADESH 201308 India</span>
+            <span>J-3 SHAHABDI ENCLAVE</span>
+            <span>NOIDA, UTTAR PRADESH 201301 India</span>
           </p>
         </section>
         <section className="deleteAccount">
@@ -580,14 +582,14 @@ const PrivacyPage = () => {
             13. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM
             YOU?
           </h2>
-          <p>
+          <p classname="para">
             Please send us a mail regarding this concern at{" "}
             <a href="mailto:connect@valscotech.com">connect@valscotech.com</a>{" "}
             and we will update you with appropriate response as soon as
             possible.
           </p>
         </section>
-      </div>
+      </section>
     </>
   );
 };

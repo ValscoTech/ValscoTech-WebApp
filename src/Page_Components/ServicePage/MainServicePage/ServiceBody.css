@@ -56,6 +56,15 @@
     width: 50%;
 }
 
+.steps-image {
+    width: 35%;
+    text-align: center;
+}
+
+.steps-image img {
+    width: 100%;
+}
+
 .section-hero-img img {
     margin-left: auto;
     /* Code for Alt Text to be at center */
@@ -70,7 +79,7 @@
     align-items: center;
     padding: 1rem 0;
     gap: 2rem;
-    margin: 7% 0;
+    margin: 7rem 0;
 }
 
 .about-service-steps.odd {
@@ -108,13 +117,18 @@
     gap: 6rem;
 }
 
-.to_enroll {
+.to_enroll,
+.to_enroll_btn {
     padding: 4rem;
     text-align: center;
     border-radius: 10px;
     border: 1px solid #FC346C;
     background: linear-gradient(90deg, #D64045 5.38%, #EE395E 62.94%, #FE346E 100%);
     margin: auto;
+}
+
+.to_enroll_btn {
+    padding: 2rem;
 }
 
 .to_enroll h2 {
@@ -347,10 +361,6 @@ details[open] p {
         width: auto;
     }
 
-    .steps-image img {
-        width: 100%;
-    }
-
     .steps-details h2 {
         font-size: 2rem;
     }
@@ -358,6 +368,10 @@ details[open] p {
     .steps-details ul li,
     .arrow {
         font-size: 18px;
+    }
+
+    .steps-image {
+        width: 80%;
     }
 
     .offer-div {
@@ -384,10 +398,6 @@ details[open] p {
         flex-direction: column;
     }
 
-    .steps-image {
-        width: 100%;
-    }
-
     .about-service-steps.odd,
     .about-service-steps {
         flex-direction: column;
@@ -400,10 +410,6 @@ details[open] p {
     .steps-details ul li,
     .arrow {
         font-size: 18px;
-    }
-
-    .steps-image img {
-        width: 100%;
     }
 
     .to_enroll {

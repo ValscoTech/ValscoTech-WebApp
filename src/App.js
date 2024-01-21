@@ -22,23 +22,12 @@ import ServicePageHero from "./Page_Components/ServicePage/MainServicePage/Servi
 import ServiceBody from "./Page_Components/ServicePage/MainServicePage/ServiceBody";
 import ServicesDisplayBody from "./Page_Components/ServicePage/ServicesDisplayPage/ServicesDisplay";
 import UserNav from "./Components/Navbars/UserNav"; // Used for [Login page], [Create Blog Page] and [Read Blogs Page] only
+import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
+
 // const axios = require('axios');
-// General Components
-
-// Home Page Components
-
-// Login Page Component
-
-// Create Blog Page Component
-
-// Read Blogs Page Component
-
-// Detailed Blog Page Component
-
-// Privacy Page Component
-
 // axios.defaults.baseURL = "https://valscobackendtest.onrender.com"
 // axios.defaults.baseURL = "http://localhost:5000"
+
 function App() {
   const [isLoadingComplete, setIsLoadingComplete] = useState(false);
   const [authenticated, setAuthenticated] = useState(
@@ -74,10 +63,16 @@ function App() {
     { title: "Contact Us", link: "contactuspage", type: "Link" },
     { title: "Register", link: "/RegisterCourse", type: "NavLink" },
   ];
+  const policyNav = [
+    { title: "Home", link: "/", type: "NavLink" },
+    { title: "Blogs", link: "/BlogHome", type: "NavLink" },
+    { title: "Courses", link: "/Courses", type: "NavLink" },
+  ];
 
-  const linksList = [homeNav, coursesNav, serviceNav];
+  const linksList = [homeNav, coursesNav, serviceNav, policyNav];
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route
           path="/"
@@ -104,6 +99,7 @@ function App() {
           path="/PrivacyPage"
           element={
             <>
+              <HomeNav linksList={linksList[3]} />
               <PrivacyPageBody />
             </>
           }
@@ -112,6 +108,7 @@ function App() {
           path="/RefundPolicy"
           element={
             <>
+              <HomeNav linksList={linksList[3]} />
               <RefundPageBody />
             </>
           }
@@ -120,6 +117,7 @@ function App() {
           path="/T&C"
           element={
             <>
+              <HomeNav linksList={linksList[3]} />
               <TermsAndConditionPageBody />
             </>
           }
