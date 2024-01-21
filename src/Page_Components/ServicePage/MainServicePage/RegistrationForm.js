@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+
+import toast from "react-hot-toast";
+
 const RegistrationForm = () => {
   const [details, setDetails] = useState({
     fname: "",
@@ -11,9 +14,50 @@ const RegistrationForm = () => {
     nationality: "",
     credibility: "",
   });
-  const handleSubmit = (e) => {
+
+  const scriptUrl =
+    "https://script.google.com/macros/s/AKfycbzTF1yQ2TmTfWc9IR2w2pjq6xtGHhqVIamd8IyPNAYtnoYAGpsM5-y2zQS0D-0TbIkjtA/exec";
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const formData = new FormData();
+    for (const key in details) {
+      formData.append(key, details[key]);
+    }
+
+    try {
+      const response = await fetch(scriptUrl, {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        // Handle successful response (e.g., show a success message or redirect)
+        setDetails({
+          fname: "",
+          lname: "",
+          phone: "",
+          email: "",
+          studyField: "",
+          city: "",
+          birthday: "",
+          nationality: "",
+          credibility: "",
+        });
+        toast.success("Form successfully submitted 🎉");
+
+        console.log("Form submitted successfully");
+      } else {
+        // Handle error response (e.g., show an error message)
+        console.error("Error submitting form");
+      }
+    } catch (error) {
+      // Handle fetch error
+      console.error("Error:", error);
+    }
   };
+
   return (
     <section className="course-register-form">
       <h2>Welcome</h2>
