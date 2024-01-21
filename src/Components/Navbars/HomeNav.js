@@ -19,10 +19,10 @@ const HomeNav = ({ linksList }) => {
       </Helmet>
       <nav className="navbar">
         <div className="navbar-container">
-          <Link to="landing" className="navbar-logo">
+          <NavLink to="/" className="navbar-logo">
             <img src={logo} alt="icon" className="navbar-icon" />
             <h1>VALSCO TECHNOLOGY</h1>
-          </Link>
+          </NavLink>
           <div className="nav-menu">
             {linksList.map((navItem, index) => (
               <li
