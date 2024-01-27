@@ -2,6 +2,7 @@ import React from "react";
 import "./ServiceBody.css";
 import { offeredService, faqs } from "./serviceData";
 import { useLocation, useNavigate } from "react-router-dom";
+import Timer from "./Timer/Timer";
 const ServiceBody = () => {
   const navigate = useNavigate();
   const service_steps = useLocation().state;
@@ -62,10 +63,9 @@ const ServiceBody = () => {
         ))}
       </section>
       <section className="offer-timer">
-        <h3>Time is Running Out, Grab You Spot</h3>
-        <div className="time">02: 59: 59</div>
+        <Timer />
         <button
-          className="to_enroll"
+          className="to_enroll to_enroll_btn"
           style={{ margin: "3rem 0" }}
           onClick={() => {
             navigate("/RegisterCourse", { state: service_steps });

@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 
 import { default as axios } from "axios";
-import btoa from "btoa-lite";
-import sha256 from "crypto-js/sha256";
 import toast from "react-hot-toast";
-import { v4 as uuidv4 } from "uuid";
 
 const RegistrationForm = () => {
   const [details, setDetails] = useState({
@@ -27,90 +24,90 @@ const RegistrationForm = () => {
     transactionId: "T" + Date.now(),
   };
 
-  const makePayment = async (e) => {
-    e.preventDefault();
+  // const makePayment = async (e) => {
+  //   e.preventDefault();
 
-    const transactionid = "Tr-" + uuidv4().toString(36).slice(-6);
+  //   const transactionid = "Tr-" + uuidv4().toString(36).slice(-6);
 
-    console.log(process.env.MERCHANT_ID);
-    const payload = {
-      merchantId: "PGTESTPAYUAT",
+  //   console.log(process.env.MERCHANT_ID);
+  //   const payload = {
+  //     merchantId: "PGTESTPAYUAT",
 
-      // merchantId: "PGTESTPAYUAT",
-      merchantTransactionId: transactionid,
-      merchantUserId: "MUID-" + uuidv4().toString(36).slice(-6),
-      amount: 10000,
-      redirectUrl: `http://localhost:3000/api/status/${transactionid}`,
-      redirectMode: "POST",
-      callbackUrl: `http://localhost:3000/api/status/${transactionid}`,
-      mobileNumber: "9999999999",
-      paymentInstrument: {
-        type: "PAY_PAGE",
-      },
-    };
+  //     // merchantId: "PGTESTPAYUAT",
+  //     merchantTransactionId: transactionid,
+  //     merchantUserId: "MUID-" + uuidv4().toString(36).slice(-6),
+  //     amount: 10000,
+  //     redirectUrl: `http://localhost:3000/api/status/${transactionid}`,
+  //     redirectMode: "POST",
+  //     callbackUrl: `http://localhost:3000/api/status/${transactionid}`,
+  //     mobileNumber: "9999999999",
+  //     paymentInstrument: {
+  //       type: "PAY_PAGE",
+  //     },
+  //   };
 
-    const dataPayload = JSON.stringify(payload);
-    console.log(dataPayload);
+  //   const dataPayload = JSON.stringify(payload);
+  //   console.log(dataPayload);
 
-    // const dataBase64 = Buffer.from(dataPayload).toString("base64");
-    const dataBase64 = btoa(dataPayload);
+  //   // const dataBase64 = Buffer.from(dataPayload).toString("base64");
+  //   const dataBase64 = btoa(dataPayload);
 
-    console.log(dataBase64);
+  //   console.log(dataBase64);
 
-    const fullURL =
-      dataBase64 + "/pg/v1/pay" + "099eb0cd-02cf-4e2a-8aca-3e6c6aff0399";
-    const dataSha256 = sha256(fullURL);
+  //   const fullURL =
+  //     dataBase64 + "/pg/v1/pay" + "099eb0cd-02cf-4e2a-8aca-3e6c6aff0399";
+  //   const dataSha256 = sha256(fullURL);
 
-    const checksum = dataSha256 + "###" + 1;
-    console.log("c====", checksum);
+  //   const checksum = dataSha256 + "###" + 1;
+  //   console.log("c====", checksum);
 
-    const UAT_PAY_API_URL =
-      "https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay";
+  //   const UAT_PAY_API_URL =
+  //     "https://api-preprod.phonepe.com/apis/pg-sandbox/pg/v1/pay";
 
-    const response = await axios.post(
-      UAT_PAY_API_URL,
-      {
-        request: dataBase64,
-      },
-      {
-        headers: {
-          accept: "application/json",
-          "Content-Type": "application/json",
-          "X-VERIFY": checksum,
-        },
-      }
-    );
+  //   const response = await axios.post(
+  //     UAT_PAY_API_URL,
+  //     {
+  //       request: dataBase64,
+  //     },
+  //     {
+  //       headers: {
+  //         accept: "application/json",
+  //         "Content-Type": "application/json",
+  //         "X-VERIFY": checksum,
+  //       },
+  //     }
+  //   );
 
-    const redirect = response.data.data.instrumentResponse.redirectInfo.url;
-    // router.push(redirect)
+  // const redirect = response.data.data.instrumentResponse.redirectInfo.url;
+  // router.push(redirect)
 
-    window.location.href = redirect; //
+  // window.location.href = redirect; //
 
-    // const options = {
-    //   method: "POST",
-    //   url: UAT_PAY_API_URL,
-    //   headers: {
-    //     accept: "application/json",
-    //     "Content-Type": "application/json",
-    //     "X-VERIFY": checksum,
-    //   },
-    //   data: {
-    //     request: dataBase64,
-    //   },
-    // };
+  // const options = {
+  //   method: "POST",
+  //   url: UAT_PAY_API_URL,
+  //   headers: {
+  //     accept: "application/json",
+  //     "Content-Type": "application/json",
+  //     "X-VERIFY": checksum,
+  //   },
+  //   data: {
+  //     request: dataBase64,
+  //   },
+  // };
 
-    // axios
-    //   .request(options)
-    //   .then(function (response) {
-    //     console.log(response.data);
-    //     return response.redirect(
-    //       response.data.data.instrumentResponse.redirectInfo.url
-    //     );
-    //   })
-    //   .catch(function (error) {
-    //     console.error(error);
-    //   });
-  };
+  // axios
+  //   .request(options)
+  //   .then(function (response) {
+  //     console.log(response.data);
+  //     return response.redirect(
+  //       response.data.data.instrumentResponse.redirectInfo.url
+  //     );
+  //   })
+  //   .catch(function (error) {
+  //     console.error(error);
+  //   });
+  // };
 
   const scriptUrl =
     "https://script.google.com/macros/s/AKfycbzTF1yQ2TmTfWc9IR2w2pjq6xtGHhqVIamd8IyPNAYtnoYAGpsM5-y2zQS0D-0TbIkjtA/exec";
@@ -145,17 +142,17 @@ const RegistrationForm = () => {
 
       if (response.ok) {
         // Handle successful response (e.g., show a success message or redirect)
-        // setDetails({
-        //   fname: "",
-        //   lname: "",
-        //   phone: "",
-        //   email: "",
-        //   studyField: "",
-        //   city: "",
-        //   birthday: "",
-        //   nationality: "",
-        //   credibility: "",
-        // });
+        setDetails({
+          fname: "",
+          lname: "",
+          phone: "",
+          email: "",
+          studyField: "",
+          city: "",
+          birthday: "",
+          nationality: "",
+          credibility: "",
+        });
         toast.success("Form successfully submitted 🎉");
 
         console.log("Form submitted successfully");

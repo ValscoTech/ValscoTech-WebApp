@@ -1,47 +1,37 @@
 import React, { useEffect, useState } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
-import About from "./Page_Components/Home/About/About";
 import Alert from "./Components/Alerts/Alert";
+import Slider from "./Components/BlogSlider/Slider";
+import Footer from "./Components/Footer/Footer";
+import HomeNav from "./Components/Navbars/HomeNav";
+import UserNav from "./Components/Navbars/UserNav"; // Used for [Login page], [Create Blog Page] and [Read Blogs Page] only
+import Failure from "./Components/Payment_redirect/Failure";
+import Success from "./Components/Payment_redirect/Success";
+import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 import BlogPageBody from "./Page_Components/BlogPage/BlogPage";
 import CreateBlogBody from "./Page_Components/CreateBlog/CreateBlog";
-import Failure from "./Components/Payment_redirect/Failure";
-import Footer from "./Components/Footer/Footer";
+import About from "./Page_Components/Home/About/About";
 import HeroImg from "./Page_Components/Home/HeroSections/HeroImg";
-import HomeNav from "./Components/Navbars/HomeNav";
+import Products from "./Page_Components/Home/HeroSections/Products";
 import Intro from "./Page_Components/Home/Introduction/Intro";
 import { LoadingScreen } from "./Page_Components/Home/LoadingScreen/LoadingScreen";
 import LoginBody from "./Page_Components/Login/Login";
 import PrivacyPageBody from "./Page_Components/PrivacyPage/Privacy";
-import Products from "./Page_Components/Home/HeroSections/Products";
 import ReadBlogsBody from "./Page_Components/ReadBlog/ReadBlog";
 import RefundPageBody from "./Page_Components/RefundPage/RefundPage";
 import RegistrationForm from "./Page_Components/ServicePage/MainServicePage/RegistrationForm";
 import ServiceBody from "./Page_Components/ServicePage/MainServicePage/ServiceBody";
 import ServicePageHero from "./Page_Components/ServicePage/MainServicePage/ServicePageHero";
 import ServicesDisplayBody from "./Page_Components/ServicePage/ServicesDisplayPage/ServicesDisplay";
-import Slider from "./Components/BlogSlider/Slider";
-import Success from "./Components/Payment_redirect/Success";
 import TermsAndConditionPageBody from "./Page_Components/TermsConditionPage/TermsCondition";
-import UserNav from "./Components/Navbars/UserNav"; // Used for [Login page], [Create Blog Page] and [Read Blogs Page] only
+
+// import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
 
 // const axios = require('axios');
-// General Components
-
-// Home Page Components
-
-// Login Page Component
-
-// Create Blog Page Component
-
-// Read Blogs Page Component
-
-// Detailed Blog Page Component
-
-// Privacy Page Component
-
 // axios.defaults.baseURL = "https://valscobackendtest.onrender.com"
 // axios.defaults.baseURL = "http://localhost:5000"
+
 function App() {
   const [isLoadingComplete, setIsLoadingComplete] = useState(false);
   const [authenticated, setAuthenticated] = useState(
@@ -77,10 +67,16 @@ function App() {
     { title: "Contact Us", link: "contactuspage", type: "Link" },
     { title: "Register", link: "/RegisterCourse", type: "NavLink" },
   ];
+  const policyNav = [
+    { title: "Home", link: "/", type: "NavLink" },
+    { title: "Blogs", link: "/BlogHome", type: "NavLink" },
+    { title: "Courses", link: "/Courses", type: "NavLink" },
+  ];
 
-  const linksList = [homeNav, coursesNav, serviceNav];
+  const linksList = [homeNav, coursesNav, serviceNav, policyNav];
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route
           path="/"
@@ -107,6 +103,7 @@ function App() {
           path="/PrivacyPage"
           element={
             <>
+              <HomeNav linksList={linksList[3]} />
               <PrivacyPageBody />
             </>
           }
@@ -115,6 +112,7 @@ function App() {
           path="/RefundPolicy"
           element={
             <>
+              <HomeNav linksList={linksList[3]} />
               <RefundPageBody />
             </>
           }
@@ -123,6 +121,7 @@ function App() {
           path="/T&C"
           element={
             <>
+              <HomeNav linksList={linksList[3]} />
               <TermsAndConditionPageBody />
             </>
           }

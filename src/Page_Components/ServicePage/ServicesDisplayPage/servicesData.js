@@ -1,17 +1,35 @@
-import illustartion_1 from "../../../Assets/ServicesPage_Assets/Illustration_1.png";
-import illustartion_2 from "../../../Assets/ServicesPage_Assets/Illustration_2.png";
-import illustartion_3 from "../../../Assets/ServicesPage_Assets/Illustration_3.png";
-import illustartion_4 from "../../../Assets/ServicesPage_Assets/Illustration_4.png";
-import illustartion_5 from "../../../Assets/ServicesPage_Assets/Illustration_5.png";
+import f_illustration_1 from "../../../Assets/ServicesPage_Assets/Illustration_1.png";
+import f_illustration_2 from "../../../Assets/ServicesPage_Assets/Illustration_2.png";
+import f_illustration_3 from "../../../Assets/ServicesPage_Assets/Illustration_3.png";
+import f_illustration_4 from "../../../Assets/ServicesPage_Assets/Illustration_4.png";
+import f_illustration_5 from "../../../Assets/ServicesPage_Assets/Illustration_5.png";
 
-import frontend_Illustration from "../../../Assets/ServicesPage_Assets/FrontendDevelopment.png";
+import b_illustration_1 from "../../../Assets/ServicesPage_Assets/B_Illustration_1.png";
+import b_illustration_2 from "../../../Assets/ServicesPage_Assets/B_Illustration_2.jpg";
+import b_illustration_3 from "../../../Assets/ServicesPage_Assets/B_Illustration_3.jpg";
+import b_illustration_4 from "../../../Assets/ServicesPage_Assets/B_Illustration_4.png";
+
+import a_illustration_1 from "../../../Assets/ServicesPage_Assets/A_Illustration_1.png";
+import a_illustration_2 from "../../../Assets/ServicesPage_Assets/A_Illustration_2.png";
+import a_illustration_3 from "../../../Assets/ServicesPage_Assets/A_Illustration_3.png";
+import a_illustration_4 from "../../../Assets/ServicesPage_Assets/A_Illustration_4.png";
+import a_illustration_5 from "../../../Assets/ServicesPage_Assets/U_Illustration_5.jpg";
+
+import u_illustration_1 from "../../../Assets/ServicesPage_Assets/U_Illustration_1.png";
+import u_illustration_2 from "../../../Assets/ServicesPage_Assets/U_Illustration_2.png";
+import u_illustration_3 from "../../../Assets/ServicesPage_Assets/U_Illustration_3.png";
+import u_illustration_4 from "../../../Assets/ServicesPage_Assets/U_Illustration_4.png";
+import u_illustration_5 from "../../../Assets/ServicesPage_Assets/U_Illustration_5.jpg";
+
+import frontend_Illustration from "../../../Assets/ServicesPage_Assets/FrontendDevelopment.jpeg";
 import backend_Illustration from "../../../Assets/ServicesPage_Assets/BackendDevelopment.png";
+
 import android_Illustration from "../../../Assets/ServicesPage_Assets/AndroidDevelopment.png";
 import UI_UX_Illustration from "../../../Assets/ServicesPage_Assets/UI-UX-Designing.png";
 
 export const frontend_data = [
   {
-    img: illustartion_1,
+    img: f_illustration_1,
     title: "DESIGNING A WEBSITE",
     points: [
       "UI/UX Fundamentals",
@@ -21,7 +39,7 @@ export const frontend_data = [
     color: "#008957",
   },
   {
-    img: illustartion_2,
+    img: f_illustration_2,
     title: "Diving into CSS",
     points: [
       "Responsive design using flexbox",
@@ -31,7 +49,7 @@ export const frontend_data = [
     color: "#7C44B6",
   },
   {
-    img: illustartion_3,
+    img: f_illustration_3,
     title: "Master Responsive designs",
     points: [
       "Media Queries",
@@ -41,7 +59,7 @@ export const frontend_data = [
     color: "#0038FF",
   },
   {
-    img: illustartion_4,
+    img: f_illustration_4,
     title: "JavaScript Fundamentals",
     points: [
       "Introduction to JavaScript",
@@ -52,7 +70,7 @@ export const frontend_data = [
     color: "#4EB3CF",
   },
   {
-    img: illustartion_5,
+    img: f_illustration_5,
     title: "LIVE CODING AND PROJECT IMPLEMENTATION",
     points: [
       "Code Review and implementation of OTT Platform",
@@ -64,105 +82,98 @@ export const frontend_data = [
 
 const backend_data = [
   {
-    img: illustartion_1,
-    title: "WEBSITE",
+    img: b_illustration_1,
+    title: "Introduction to Backend Development and Databases",
     points: [
-      "UI/UX Fundamentals",
-      "Introduction to HTML",
-      "Styling with CSS Implementation",
+      `Introduction to Backend Development and its role in web applications.`,
+      `MySQL Fundamentals`,
+      `MongoDB Basics`,
     ],
     color: "#008957",
   },
   {
-    img: illustartion_2,
-    title: "Diving into CSS",
+    img: b_illustration_2,
+    title: "Building Backend with Node.js and MySQL",
     points: [
-      "Responsive design using flexbox",
-      "Understanding Usecases",
-      "Master Flexbox",
+      `Setting Up Node.js Environment`,
+      `Creating RESTful APIs with Node.js`,
+      `Integrating MySQL with Node.js`,
     ],
     color: "#7C44B6",
   },
   {
-    img: illustartion_3,
-    title: "Master Responsive designs",
+    img: b_illustration_3,
+    title: "Building Backend with Node.js and MongoDB",
     points: [
-      "Media Queries",
-      "Creating Animations",
-      "Using animations in real world examples",
+      `MongoDB with Node.js - Basic Operations`,
+      `Building RESTful APIs with MongoDB`,
+      `Advanced MongoDB Concepts`,
     ],
     color: "#0038FF",
   },
   {
-    img: illustartion_4,
-    title: "JavaScript Fundamentals",
+    img: b_illustration_4,
+    title: "Advanced Topics and Final Project",
     points: [
-      "Introduction to JavaScript",
-      "Working with Variables and Data Types",
-      "Conditional Statements and Loops",
-      "Functions and DOM Manipulation Basics",
+      `Authentication and Authorization`,
+      `Error Handling and Logging`,
+      `Deploying Backend Applications`,
+      `Final Project`,
     ],
     color: "#4EB3CF",
-  },
-  {
-    img: illustartion_5,
-    title: "LIVE CODING AND PROJECT IMPLEMENTATION",
-    points: [
-      "Code Review and implementation of OTT Platform",
-      "Make and Deploy a project from Scratch",
-    ],
-    color: "#326F96",
   },
 ];
 
 const android_data = [
   {
-    img: illustartion_1,
-    title: "DESIGNING A WEBSITE",
+    img: a_illustration_1,
+    title: "Introduction to Mobile App Development",
     points: [
-      "UI/UX Fundamentals",
-      "Introduction to HTML",
-      "Styling with CSS Implementation",
+      `Understanding Mobile App Ecosystem`,
+      `Introduction to Flutter and Dart`,
+      `Setting Up Flutter Development Environment`,
     ],
     color: "#008957",
   },
   {
-    img: illustartion_2,
-    title: "Diving into CSS",
+    img: a_illustration_2,
+    title: "Building User Interfaces",
     points: [
-      "Responsive design using flexbox",
-      "Understanding Usecases",
-      "Master Flexbox",
+      `Basics of Flutter Widgets`,
+      `Styling and Layouts in Flutter`,
+      `Navigation and Routing in Flutter`,
     ],
     color: "#7C44B6",
   },
   {
-    img: illustartion_3,
-    title: "Master Responsive designs",
+    img: a_illustration_3,
+    title: "Working with Data",
     points: [
-      "Media Queries",
-      "Creating Animations",
-      "Using animations in real world examples",
+      `Introduction to State Management`,
+      `Managing State with SetState`,
+      `Exploring Packages and APIs`,
+      `Fetching and Displaying Data`,
     ],
     color: "#0038FF",
   },
   {
-    img: illustartion_4,
-    title: "JavaScript Fundamentals",
+    img: a_illustration_4,
+    title: "Creating Interactive Apps",
     points: [
-      "Introduction to JavaScript",
-      "Working with Variables and Data Types",
-      "Conditional Statements and Loops",
-      "Functions and DOM Manipulation Basics",
+      `Handling User Input`,
+      `Building Forms and Validation`,
+      `Adding Animations and Transitions`,
+      `Building a Complete Flutter App`,
     ],
     color: "#4EB3CF",
   },
   {
-    img: illustartion_5,
-    title: "LIVE CODING AND PROJECT IMPLEMENTATION",
+    img: a_illustration_5,
+    title: "Live Coding and Project Implementation",
     points: [
-      "Code Review and implementation of OTT Platform",
-      "Make and Deploy a project from Scratch",
+      `Testing and Debugging`,
+      `Polish your projects, ensuring smooth functionality and clean code.`,
+      `Prepare a presentation to showcase your task management and weather apps.`,
     ],
     color: "#326F96",
   },
@@ -170,52 +181,51 @@ const android_data = [
 
 const ui_ux_data = [
   {
-    img: illustartion_1,
-    title: "DESIGNING A WEBSITE",
+    img: u_illustration_1,
+    title: "Introduction to UI and UX",
     points: [
       "UI/UX Fundamentals",
-      "Introduction to HTML",
+      "What is UX and UI Design ? The difference between the two",
       "Styling with CSS Implementation",
     ],
     color: "#008957",
   },
   {
-    img: illustartion_2,
-    title: "Diving into CSS",
+    img: u_illustration_2,
+    title: "UX Designing",
     points: [
-      "Responsive design using flexbox",
-      "Understanding Usecases",
-      "Master Flexbox",
+      "UX Design: User Persona",
+      "UX Design: User Research",
+      "UX Design: User Flow, Wireframes, Prototypes.",
     ],
     color: "#7C44B6",
   },
   {
-    img: illustartion_3,
-    title: "Master Responsive designs",
+    img: u_illustration_3,
+    title: "UI Designing",
     points: [
-      "Media Queries",
-      "Creating Animations",
-      "Using animations in real world examples",
+      "UI Design: Visual Design Principles",
+      "UI Design: Typography, The psychology of colors, How to use colors in UI",
+      "Design Thinking: Understanding what matters",
     ],
     color: "#0038FF",
   },
   {
-    img: illustartion_4,
-    title: "JavaScript Fundamentals",
+    img: u_illustration_4,
+    title: "Designing Process",
     points: [
-      "Introduction to JavaScript",
-      "Working with Variables and Data Types",
-      "Conditional Statements and Loops",
-      "Functions and DOM Manipulation Basics",
+      "UX/UI Design Process",
+      "Case Study: Designing for kids",
+      "Responsive Design, Microcopy",
     ],
     color: "#4EB3CF",
   },
   {
-    img: illustartion_5,
-    title: "LIVE CODING AND PROJECT IMPLEMENTATION",
+    img: u_illustration_5,
+    title: "Tips and practice Project",
     points: [
-      "Code Review and implementation of OTT Platform",
-      "Make and Deploy a project from Scratch",
+      "Tips: The F-pattern, Button Design, The best Shadows, Correct Labelling",
+      "Hands-on Class Project",
     ],
     color: "#326F96",
   },
