@@ -5,23 +5,26 @@ import About from "./Page_Components/Home/About/About";
 import Alert from "./Components/Alerts/Alert";
 import BlogPageBody from "./Page_Components/BlogPage/BlogPage";
 import CreateBlogBody from "./Page_Components/CreateBlog/CreateBlog";
+import Failure from "./Components/Payment_redirect/Failure";
 import Footer from "./Components/Footer/Footer";
 import HeroImg from "./Page_Components/Home/HeroSections/HeroImg";
 import HomeNav from "./Components/Navbars/HomeNav";
 import Intro from "./Page_Components/Home/Introduction/Intro";
 import { LoadingScreen } from "./Page_Components/Home/LoadingScreen/LoadingScreen";
 import LoginBody from "./Page_Components/Login/Login";
+import PrivacyPageBody from "./Page_Components/PrivacyPage/Privacy";
 import Products from "./Page_Components/Home/HeroSections/Products";
 import ReadBlogsBody from "./Page_Components/ReadBlog/ReadBlog";
-import Slider from "./Components/BlogSlider/Slider";
-import PrivacyPageBody from "./Page_Components/PrivacyPage/Privacy";
 import RefundPageBody from "./Page_Components/RefundPage/RefundPage";
-import TermsAndConditionPageBody from "./Page_Components/TermsConditionPage/TermsCondition";
 import RegistrationForm from "./Page_Components/ServicePage/MainServicePage/RegistrationForm";
-import ServicePageHero from "./Page_Components/ServicePage/MainServicePage/ServicePageHero";
 import ServiceBody from "./Page_Components/ServicePage/MainServicePage/ServiceBody";
+import ServicePageHero from "./Page_Components/ServicePage/MainServicePage/ServicePageHero";
 import ServicesDisplayBody from "./Page_Components/ServicePage/ServicesDisplayPage/ServicesDisplay";
+import Slider from "./Components/BlogSlider/Slider";
+import Success from "./Components/Payment_redirect/Success";
+import TermsAndConditionPageBody from "./Page_Components/TermsConditionPage/TermsCondition";
 import UserNav from "./Components/Navbars/UserNav"; // Used for [Login page], [Create Blog Page] and [Read Blogs Page] only
+
 // const axios = require('axios');
 // General Components
 
@@ -311,6 +314,9 @@ function App() {
             </>
           }
         />
+
+        <Route exact path="/success" element={<Success />} />
+        <Route exact path="/failure" element={<Failure />} />
       </Routes>
     </Router>
   );
