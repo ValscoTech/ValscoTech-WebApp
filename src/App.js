@@ -24,9 +24,10 @@ import RegistrationForm from "./Page_Components/ServicePage/MainServicePage/Regi
 import ServiceBody from "./Page_Components/ServicePage/MainServicePage/ServiceBody";
 import ServicePageHero from "./Page_Components/ServicePage/MainServicePage/ServicePageHero";
 import ServicesDisplayBody from "./Page_Components/ServicePage/ServicesDisplayPage/ServicesDisplay";
+
 import TermsAndConditionPageBody from "./Page_Components/TermsConditionPage/TermsCondition";
 
-// import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
+
 
 // const axios = require('axios');
 // axios.defaults.baseURL = "https://valscobackendtest.onrender.com"
