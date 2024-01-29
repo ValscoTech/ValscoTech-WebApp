@@ -1,12 +1,11 @@
 import "./index.css";
 
-import { Toaster } from "react-hot-toast";
-
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { HelmetProvider } from "react-helmet-async";
 import App from "./App";
 import { AppProvider } from "./Context/BlogContext";
+import { HelmetProvider } from "react-helmet-async";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { Toaster } from "react-hot-toast";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
