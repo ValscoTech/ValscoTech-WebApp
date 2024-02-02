@@ -121,7 +121,7 @@ const RegistrationForm = () => {
 
     // Handling payment gateway
     axios
-      .post("http://localhost:5000/api/payment", { ...data })
+      .post("https://payment-gateway-phone-pay-ruby.vercel.app/api/payment", { ...data })
       // .post("api/payment")
       .then((res) => {
         setTimeout(() => {
