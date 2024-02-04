@@ -238,7 +238,7 @@ export const services = [
     content:
       "HTML annd CSS,Javascript,Front-End Web Developement, React(Web Framework), Web Development, User Experience, Algorithms, Computer Science Web Design, Collaboration, Interactive Desgin, Product Design",
     imgLink: frontend_Illustration,
-    amount: 3000
+    amount: 3000,
   },
   {
     title: "Backend Website Development",
@@ -246,7 +246,7 @@ export const services = [
     content:
       "Databases, HTML and CSS, SQL, Database Design,Programming Principles, Back-End Web Development,etc",
     imgLink: backend_Illustration,
-    amount: 3000
+    amount: 2000,
   },
   {
     title: "Android Development",
@@ -254,7 +254,7 @@ export const services = [
     content:
       "Mobile Development, Android Development,Computer Peograming, Java programming, Programming Principles, Application Development, Mobile Development tools, Computer programming tools, Software Engineering, Data Structures, Problem Solving",
     imgLink: android_Illustration,
-    amount: 3000
+    amount: 5000,
   },
   {
     title: "UI/UX and Product Design",
@@ -262,6 +262,6 @@ export const services = [
     content:
       "User Experience, user Experience Desgin, User Reasearch, Audit, Collaboration, Human Computer Interaction,Product Desgin, etc",
     imgLink: UI_UX_Illustration,
-    amount: 3000
+    amount: 1000,
   },
 ];
