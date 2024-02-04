@@ -9,7 +9,7 @@ const ServiceBody = () => {
   return (
     <>
       <section className="about-service">
-        {service_steps.map((step, i) => (
+        {service_steps.data.map((step, i) => (
           <div
             key={i}
             className={`about-service-steps ${i % 2 === 0 ? `even` : `odd`}`}

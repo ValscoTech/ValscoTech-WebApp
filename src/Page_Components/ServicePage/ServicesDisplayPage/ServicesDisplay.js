@@ -47,6 +47,7 @@ const Services = () => {
               <div className="service-card-img">
                 <img src={service.imgLink} alt="" />
               </div>
+              <div>{service.amount}</div>
               <div className="service-card-details">
                 <h2>{service.title}</h2>
                 <p className="service-card-content">{service.content}</p>
@@ -54,7 +55,7 @@ const Services = () => {
                   <button
                     className="check_it"
                     onClick={() =>
-                      navigate(`/Service`, { state: service.data })
+                      navigate(`/Service`, { state: service })
                     }
                   >
                     Check it!
@@ -62,7 +63,7 @@ const Services = () => {
                   <button
                     className="register"
                     onClick={() =>
-                      navigate(`/RegisterCourse`, { state: service.data })
+                      navigate(`/RegisterCourse`, { state: service })
                     }
                   >
                     Register
