@@ -21,7 +21,7 @@ import u_illustration_3 from "../../../Assets/ServicesPage_Assets/U_Illustration
 import u_illustration_4 from "../../../Assets/ServicesPage_Assets/U_Illustration_4.png";
 import u_illustration_5 from "../../../Assets/ServicesPage_Assets/U_Illustration_5.jpg";
 
-import frontend_Illustration from "../../../Assets/ServicesPage_Assets/FrontendDevelopment.jpeg";
+import frontend_Illustration from "../../../Assets/ServicesPage_Assets/FrontendDevelopment.jpg";
 import backend_Illustration from "../../../Assets/ServicesPage_Assets/BackendDevelopment.png";
 
 import android_Illustration from "../../../Assets/ServicesPage_Assets/AndroidDevelopment.png";
@@ -246,7 +246,7 @@ export const services = [
     content:
       "Databases, HTML and CSS, SQL, Database Design,Programming Principles, Back-End Web Development,etc",
     imgLink: backend_Illustration,
-    amount: 2000,
+    amount: 4000,
   },
   {
     title: "Android Development",
@@ -254,7 +254,7 @@ export const services = [
     content:
       "Mobile Development, Android Development,Computer Peograming, Java programming, Programming Principles, Application Development, Mobile Development tools, Computer programming tools, Software Engineering, Data Structures, Problem Solving",
     imgLink: android_Illustration,
-    amount: 5000,
+    amount: 4000,
   },
   {
     title: "UI/UX and Product Design",
@@ -262,6 +262,6 @@ export const services = [
     content:
       "User Experience, user Experience Desgin, User Reasearch, Audit, Collaboration, Human Computer Interaction,Product Desgin, etc",
     imgLink: UI_UX_Illustration,
-    amount: 1000,
+    amount: 2000,
   },
 ];
