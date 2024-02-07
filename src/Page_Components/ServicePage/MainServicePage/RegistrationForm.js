@@ -1,13 +1,8 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router";
 import { default as axios } from "axios";
 import toast from "react-hot-toast";
-import { services } from "../ServicesDisplayPage/servicesData";
 
-const RegistrationForm = () => {
-
-  const service_steps = useLocation().state;
-
+const RegistrationForm = ({ page_data }) => {
   const [details, setDetails] = useState({
     fname: "",
     lname: "",
@@ -22,7 +17,7 @@ const RegistrationForm = () => {
 
   const data = {
     name: `${details.fname} + ${details.lname}`,
-    amount: service_steps.amount,
+    amount: page_data.amount,
     number: `${details.phone}`,
     MUID: "MUID" + Date.now(),
     transactionId: "T" + Date.now(),
@@ -121,7 +116,9 @@ const RegistrationForm = () => {
 
     // Handling payment gateway
     axios
-      .post("https://payment-gateway-phone-pay-ruby.vercel.app/api/payment", { ...data })
+      .post("https://payment-gateway-phone-pay-ruby.vercel.app/api/payment", {
+        ...data,
+      })
       // .post("api/payment")
       .then((res) => {
         setTimeout(() => {
@@ -300,7 +297,7 @@ const RegistrationForm = () => {
             }
           />
           <label htmlFor="birthday">
-            Birthday <span>*</span>
+            Birthdate <span>*</span>
           </label>
         </div>
         <div className="input-container">
@@ -339,7 +336,7 @@ const RegistrationForm = () => {
             true and Proceed to Payment
           </label>
         </div>
-        <button type="submit">Register @ {service_steps.amount}</button>
+        <button type="submit">Register @ {page_data.amount}</button>
       </form>
     </section>
   );

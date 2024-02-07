@@ -47,16 +47,13 @@ const Services = () => {
               <div className="service-card-img">
                 <img src={service.imgLink} alt="" />
               </div>
-              <div>{service.amount}</div>
               <div className="service-card-details">
                 <h2>{service.title}</h2>
                 <p className="service-card-content">{service.content}</p>
                 <div className="service-nav-buttons">
                   <button
                     className="check_it"
-                    onClick={() =>
-                      navigate(`/Service`, { state: service })
-                    }
+                    onClick={() => navigate(`/Service`, { state: service })}
                   >
                     Check it!
                   </button>
