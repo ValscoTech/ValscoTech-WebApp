@@ -53,16 +53,14 @@ const Services = () => {
                 <div className="service-nav-buttons">
                   <button
                     className="check_it"
-                    onClick={() =>
-                      navigate(`/Service`, { state: service.data })
-                    }
+                    onClick={() => navigate(`/Service`, { state: service })}
                   >
                     Check it!
                   </button>
                   <button
                     className="register"
                     onClick={() =>
-                      navigate(`/RegisterCourse`, { state: service.data })
+                      navigate(`/RegisterCourse`, { state: service })
                     }
                   >
                     Register

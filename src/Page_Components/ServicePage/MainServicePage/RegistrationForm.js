@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-
 import { default as axios } from "axios";
 import toast from "react-hot-toast";
 
-const RegistrationForm = () => {
+const RegistrationForm = ({ page_data }) => {
   const [details, setDetails] = useState({
     fname: "",
     lname: "",
@@ -17,9 +16,9 @@ const RegistrationForm = () => {
   });
 
   const data = {
-    name: "Waleed",
-    amount: 1,
-    number: "7498608775",
+    name: `${details.fname} + ${details.lname}`,
+    amount: page_data.amount,
+    number: `${details.phone}`,
     MUID: "MUID" + Date.now(),
     transactionId: "T" + Date.now(),
   };
@@ -117,7 +116,9 @@ const RegistrationForm = () => {
 
     // Handling payment gateway
     axios
-      .post("http://localhost:5000/api/payment", { ...data })
+      .post("https://payment-gateway-phone-pay-ruby.vercel.app/api/payment", {
+        ...data,
+      })
       // .post("api/payment")
       .then((res) => {
         setTimeout(() => {
@@ -296,7 +297,7 @@ const RegistrationForm = () => {
             }
           />
           <label htmlFor="birthday">
-            Birthday <span>*</span>
+            Birthdate <span>*</span>
           </label>
         </div>
         <div className="input-container">
@@ -335,7 +336,7 @@ const RegistrationForm = () => {
             true and Proceed to Payment
           </label>
         </div>
-        <button type="submit">Enter</button>
+        <button type="submit">Register @ {page_data.amount}</button>
       </form>
     </section>
   );

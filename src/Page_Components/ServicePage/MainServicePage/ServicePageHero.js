@@ -1,9 +1,8 @@
 import React from "react";
 import heroImg from "../../../Assets/ServicesPage_Assets/HeroImg_Ninja.png";
 import { useNavigate } from "react-router-dom";
-import { frontend_data } from "../ServicesDisplayPage/servicesData";
 
-const ServicePageHero = () => {
+const ServicePageHero = ({ page_data }) => {
   const navigate = useNavigate();
   return (
     <section className="service-hero">
@@ -19,7 +18,7 @@ const ServicePageHero = () => {
         <button
           className="start-today-btn"
           onClick={() => {
-            navigate("/RegisterCourse", { state: frontend_data });
+            navigate("/RegisterCourse", { state: page_data });
           }}
         >
           Start Learning Today

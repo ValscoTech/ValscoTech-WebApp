@@ -2,12 +2,8 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import "./Intro.css";
 import heroImg from "../../../Assets/HomePage_Assets/valscoLogo.gif";
-import { RxOpenInNewWindow } from "react-icons/rx";
-import { IconContext } from "react-icons";
-import { useNavigate } from "react-router-dom";
 
 function Intro() {
-  const navigate = useNavigate();
   return (
     <>
       <Helmet>

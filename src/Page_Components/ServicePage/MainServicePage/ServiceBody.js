@@ -3,13 +3,20 @@ import "./ServiceBody.css";
 import { offeredService, faqs } from "./serviceData";
 import { useLocation, useNavigate } from "react-router-dom";
 import Timer from "./Timer/Timer";
+import ServicePageHero from "./ServicePageHero";
+import RegistrationForm from "./RegistrationForm";
 const ServiceBody = () => {
   const navigate = useNavigate();
   const service_steps = useLocation().state;
   return (
     <>
+      {useLocation().pathname === "/Service" ? (
+        <ServicePageHero page_data={service_steps} />
+      ) : (
+        <RegistrationForm page_data={service_steps} />
+      )}
       <section className="about-service">
-        {service_steps.map((step, i) => (
+        {service_steps.data.map((step, i) => (
           <div
             key={i}
             className={`about-service-steps ${i % 2 === 0 ? `even` : `odd`}`}

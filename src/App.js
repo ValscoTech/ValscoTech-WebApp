@@ -27,8 +27,6 @@ import ServicesDisplayBody from "./Page_Components/ServicePage/ServicesDisplayPa
 
 import TermsAndConditionPageBody from "./Page_Components/TermsConditionPage/TermsCondition";
 
-
-
 // const axios = require('axios');
 // axios.defaults.baseURL = "https://valscobackendtest.onrender.com"
 // axios.defaults.baseURL = "http://localhost:5000"
@@ -274,7 +272,6 @@ function App() {
                 setAlertColor={setAlertColor}
               />
               <div className="service-main-body">
-                <ServicePageHero />
                 <ServiceBody
                   formVisible={true}
                   authenticated={authenticated}
@@ -300,7 +297,6 @@ function App() {
                 setAlertColor={setAlertColor}
               />
               <div className="service-main-body">
-                <RegistrationForm />
                 <ServiceBody
                   formVisible={true}
                   authenticated={authenticated}
