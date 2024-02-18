@@ -112,23 +112,88 @@ const RegistrationForm = () => {
   const scriptUrl =
     "https://script.google.com/macros/s/AKfycbzTF1yQ2TmTfWc9IR2w2pjq6xtGHhqVIamd8IyPNAYtnoYAGpsM5-y2zQS0D-0TbIkjtA/exec";
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   // Handling payment gateway
+  //   axios
+  //     .post("http://localhost:5000/api/payment", {
+  //       ...data,
+  //     })
+  //     // .post("api/payment")
+  //     .then((res) => {
+  //       console.log(res.data);
+  //       window.location.href = res.data;
+
+  //     })
+  //     .catch((error) => {
+  //       // setLoading2(false);
+  //       console.error(error);
+  //     });
+
+  //   const formData = new FormData();
+  //   for (const key in details) {
+  //     formData.append(key, details[key]);
+  //   }
+
+  //   try {
+  //     const response = await fetch(scriptUrl, {
+  //       method: "POST",
+  //       body: formData,
+  //     });
+
+  //     if (response.ok) {
+  //       // Handle successful response (e.g., show a success message or redirect)
+  //       // setDetails({
+  //       //   fname: "",
+  //       //   lname: "",
+  //       //   phone: "",
+  //       //   email: "",
+  //       //   studyField: "",
+  //       //   city: "",
+  //       //   birthday: "",
+  //       //   nationality: "",
+  //       //   credibility: "",
+  //       // });
+  //       toast.success("Form successfully submitted 🎉");
+
+  //       console.log("Form submitted successfully");
+  //     } else {
+  //       // Handle error response (e.g., show an error message)
+  //       console.error("Error submitting form");
+  //     }
+  //   } catch (error) {
+  //     // Handle fetch error
+  //     console.error("Error:", error);
+  //   }
+  // };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Handling payment gateway
-    axios
-      .post("http://localhost:5000/api/payment", { ...data })
-      // .post("api/payment")
-      .then((res) => {
-        setTimeout(() => {
-          // setLoading2(false);
-        }, 1500);
-      })
-      .catch((error) => {
-        // setLoading2(false);
-        console.error(error);
-      });
+    try {
+      // Make a POST request to the payment API
+      const paymentResponse = await axios.post(
+        "https://phone-pay-payment-gateway-node-js.vercel.app/api/payment",
+        {
+          ...data,
+        }
+      );
 
+      // If payment request is successful, redirect to the received URL
+      if (paymentResponse.status === 200) {
+        console.log(paymentResponse.data);
+        window.location.href = paymentResponse.data.redirectUrl; // Assuming the server sends back the redirect URL
+      } else {
+        // Handle payment request error
+        console.error("Payment request failed");
+      }
+    } catch (paymentError) {
+      // Handle payment request error
+      console.error("Payment request error:", paymentError);
+    }
+
+    // After handling payment, continue with form submission
     const formData = new FormData();
     for (const key in details) {
       formData.append(key, details[key]);
@@ -142,19 +207,7 @@ const RegistrationForm = () => {
 
       if (response.ok) {
         // Handle successful response (e.g., show a success message or redirect)
-        setDetails({
-          fname: "",
-          lname: "",
-          phone: "",
-          email: "",
-          studyField: "",
-          city: "",
-          birthday: "",
-          nationality: "",
-          credibility: "",
-        });
         toast.success("Form successfully submitted 🎉");
-
         console.log("Form submitted successfully");
       } else {
         // Handle error response (e.g., show an error message)
