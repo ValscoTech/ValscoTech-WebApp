@@ -171,9 +171,23 @@ const RegistrationForm = ({ page_data }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // axios
+    //   .post("http://localhost:5000/api/payment", { ...data })
+    //   // .post("api/payment")
+    //   .then((res) => {
+    //     setTimeout(() => {
+    //       // setLoading2(false);
+    //     }, 1500);
+    //   })
+    //   .catch((error) => {
+    //     // setLoading2(false);
+    //     console.error(error);
+    //   });
+
     try {
       // Make a POST request to the payment API
       const paymentResponse = await axios.post(
+        // "http://localhost:5000/api/payment",
         "https://phone-pay-payment-gateway-node-js.vercel.app/api/payment",
         {
           ...data,
