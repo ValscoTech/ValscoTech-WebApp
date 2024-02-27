@@ -238,7 +238,7 @@ export const services = [
     content:
       "HTML annd CSS,Javascript,Front-End Web Developement, React(Web Framework), Web Development, User Experience, Algorithms, Computer Science Web Design, Collaboration, Interactive Desgin, Product Design",
     imgLink: frontend_Illustration,
-    amount: 3000,
+    amount: 3500,
   },
   {
     title: "Backend Website Development",

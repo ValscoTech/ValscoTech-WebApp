@@ -345,10 +345,10 @@ details[open] p {
 .course-register-form button {
     border-radius: 8px;
     background: #FC346C;
-    padding: 20px 60px;
+    padding: 20px;
     width: fit-content;
     color: white;
-    font-size: 2.5rem;
+    font-size: 1.25rem;
     font-weight: 600;
     cursor: pointer;
 }
@@ -395,10 +395,6 @@ details[open] p {
 
     .course-register-form .Std-Name {
         flex-direction: column;
-    }
-
-    .course-register-form button {
-        font-size: 1.5rem;
     }
 
     .about-service-steps.odd,

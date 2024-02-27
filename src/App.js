@@ -20,9 +20,7 @@ import LoginBody from "./Page_Components/Login/Login";
 import PrivacyPageBody from "./Page_Components/PrivacyPage/Privacy";
 import ReadBlogsBody from "./Page_Components/ReadBlog/ReadBlog";
 import RefundPageBody from "./Page_Components/RefundPage/RefundPage";
-import RegistrationForm from "./Page_Components/ServicePage/MainServicePage/RegistrationForm";
 import ServiceBody from "./Page_Components/ServicePage/MainServicePage/ServiceBody";
-import ServicePageHero from "./Page_Components/ServicePage/MainServicePage/ServicePageHero";
 import ServicesDisplayBody from "./Page_Components/ServicePage/ServicesDisplayPage/ServicesDisplay";
 
 import TermsAndConditionPageBody from "./Page_Components/TermsConditionPage/TermsCondition";

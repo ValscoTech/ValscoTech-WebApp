@@ -1,20 +1,20 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom';
-
+import React from "react";
+import { Link } from "react-router-dom";
+import failureImg from "../../Assets/Payment_Assets/error_illustration.jpg";
 const Failure = () => {
-    // const navigate = useNavigate()
-    return (
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-md-6 text-center">
-                <div className="alert alert-danger text-center">
-                    <h4 className="alert-heading">Oops, something went wrong!</h4>
-                </div>
-                <a href='/'>Back to Home</a>
-            </div>
-          </div>
-        </div>
-      );
-}
+  return (
+    <section
+      className="payment_container"
+      style={{ backgroundColor: "#F9F9EFff" }}
+    >
+      <div className="illustation_container">
+        <img src={failureImg} alt="" />
+      </div>
+      <h1>oops! payment failed</h1>
+      <h2>something went wrong try again later</h2>
+      <Link to="/Courses">Back to Courses</Link>
+    </section>
+  );
+};
 
-export default Failure
+export default Failure;
