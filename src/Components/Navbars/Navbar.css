@@ -61,7 +61,7 @@
     display: none;
 }
 
-.nav-item {
+.nav-item a {
     position: relative;
     padding: 0.5rem;
     border-radius: 5px;
@@ -84,15 +84,11 @@
     color: white;
 }
 
-.nav-item:hover {
+.nav-item a:hover {
     color: white;
     cursor: pointer;
     font-weight: 700;
     background: linear-gradient(90deg, hsla(207, 96%, 69%, 1) 0%, hsla(220, 97%, 64%, 1) 0%, hsla(192, 89%, 63%, 1) 100%);
-}
-
-.nav-item:hover a {
-    color: white;
 }
 
 .register-navbtn:hover {
@@ -181,21 +177,27 @@
     }
 
     .nav-item {
+        width: 100%;
+        padding: 0;
+    }
+
+    .nav-item a {
         padding: 1rem;
         margin: 0;
         width: 100%;
         background-color: hsla(0, 0%, 100%, .436);
+        display: block;
     }
 
-    .nav-item:hover,
-    .nav-links:hover .nav-item {
-        padding: 1rem;
+    .nav-item a:hover,
+    .nav-links a:hover {
+        padding-left: 1.5rem;
     }
 
-    .nav-item:hover a,
+    /* .nav-item:hover a,
     .nav-links:hover a {
         margin-left: 1.5rem;
-    }
+    } */
 
     .menu-icon {
         display: block;

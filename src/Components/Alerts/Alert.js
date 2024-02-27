@@ -14,7 +14,7 @@ const Alert = (props) => {
         <title>{props.alertMsg ? props.alertMsg : "Alert"}</title>
       </Helmet>
       <div className="alert-main-div">
-        {props.alertMsg && props.alertMsg != "" && (
+        {props.alertMsg && props.alertMsg !== "" && (
           <div
             className="alert-div"
             style={{ backgroundColor: `${props.alertColor}` }}
