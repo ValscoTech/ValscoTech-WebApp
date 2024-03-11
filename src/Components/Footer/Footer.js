@@ -1,221 +1,64 @@
-import React, { useState } from "react";
-import "./Footer.css";
-import { createDoc } from "../../Firebase_Config/firebaseConfig";
-import axios from "axios";
-import { Link } from "react-router-dom";
+const express = require('express')
+const app = express()
+const transporter = require('./email')
+require('dotenv').config();
+const cors = require('cors')
+let port = process.env.PORT || 5000;
+let url = ['https://valscotech.com', 'http://localhost:3000/']
 
-const backendURL = "https://valscobackendtest.onrender.com";
-// const backendURL = "http://localhost:5000";
-const Footer = () => {
-  const [newContact, setNewContact] = useState({
-    name: "",
-    email: "",
-    number: "",
-    company: "",
-  });
-  const [isValid, setIsValid] = useState(true);
-  const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleOnChange = (e) => {
-    setNewContact({ ...newContact, [e.target.name]: e.target.value });
-    const inputs = document.querySelectorAll("input");
-    const validity = [...inputs].every((input) => input.checkValidity());
-    setIsValid(!validity);
-  };
+app.use(express.json());
+app.use(cors({
+    origin: '*',
+}));
 
-  const handleFormSubmit = async (e) => {
-    e.preventDefault();
-
+app.post('/', async (req, res) => {
     try {
-      newContact.name = newContact.name.trim();
-      newContact.email = newContact.email.trim();
-      newContact.company = newContact.company.trim();
-      let savedEmail = newContact.email;
-      let savedName = newContact.name;
-      axios
-        .post(backendURL, {
-          name: savedName,
-          email: savedEmail,
-        })
-        .then(function (response) {
-          createDoc(newContact);
-          setIsSuccess(true);
-          setIsValid(true);
-          alert("Your response has been submitted");
-          setTimeout(() => {
-            setIsSuccess(false);
-            setNewContact({ name: "", email: "", number: "", company: "" });
-          }, 3000);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    } catch (error) {
-      alert(`The Following Error Occured: ${error}.\nKindly Try Again!`);
-      setNewContact({ name: "", email: "", number: "", company: "" });
-    }
-  };
-  return (
-    <section id="contactuspage" className="contact-section">
-      <div className="subheadings-1">
-        <span>FUEL.</span>
-        <span>ELEVATE.</span> <span>IGNITE YOUR</span>
-        <span>SW SOLUTIONS.</span>
-      </div>
-      <div className="para">
-        <p>
-          "Ready to take your business to the next level?" Contact us today and
-          discover how Valsco can empower your success. Our dedicated team of
-          experts is here to provide you with cutting-edge software solutions
-          tailored to your specific needs. Reach out to us now to schedule a
-          consultation and explore the possibilities. Let us transform your
-          business and drive it towards greater efficiency, productivity, and
-          growth. Don't wait - unlock your full potential with Valsco. Contact
-          us today.
-          <hr />
-          Experience the Valsco Difference, Request a Consultation Today!
-        </p>
-      </div>
-      <form onSubmit={handleFormSubmit} className="b-form">
-        <h2>Get In Touch</h2>
-        <div className="form-controls">
-          <div className="input_fields">
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              onChange={handleOnChange}
-              value={newContact.name}
-              placeholder="Your Name"
-              name="name"
-              required
-              pattern="^[A-Za-z\s.]{3,50}$"
-            />
-            <span className="inp_error">
-              Name should be 3-50 Characters Long
-            </span>
-          </div>
-          <div className="input_fields">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              onChange={handleOnChange}
-              value={newContact.email}
-              placeholder="Your Email"
-              name="email"
-              required
-            />
-            <span className="inp_error">Please enter a Valid Email!</span>
-          </div>
-          <div className="input_fields">
-            <label htmlFor="number">Phone Number</label>
-            <input
-              type="tel"
-              id="number"
-              onChange={handleOnChange}
-              value={newContact.number}
-              placeholder="Your Phone Number"
-              name="number"
-              required
-              pattern="^(?:\+91\d{10}|\d{10})$"
-            />
-            <span className="inp_error">Please Enter a Valid Phone Number</span>
-          </div>
-          <div className="input_fields">
-            <label htmlFor="company">Company</label>
-            <input
-              type="text"
-              id="company"
-              onChange={handleOnChange}
-              value={newContact.company}
-              placeholder="Your Company/Organisation"
-              name="company"
-              required
-              pattern="^[A-Za-z\s0-9.\+\$\*\\]{3,100}$"
-            />
-            <span className="inp_error">
-              Company Name Should be 3-50 Characters Long
-            </span>
-          </div>
-          <button
-            type="submit"
-            className="Submit_Btn"
-            id="formSubmitButton"
-            disabled={isValid}
-          >
-            Click to send your message
-          </button>
-          {isSuccess && (
-            <div id="successfulMessage">Your Message Sent Successfully!</div>
-          )}
-        </div>
-      </form>
-      <div className="contact-container">
-        <div className="contact-Details">
-          <div className="subheadings-2">
-            <span>Have an Idea?</span>
-            <span>Tell us about it!</span>
-          </div>
-          <div className="address">
-            <a href="mailto:connect@valscotech.com">connect@valscotech.com</a>
-            <p>
-              J-3 SHAHABDI ENCLAVE
-              <br />
-              NOIDA, UTTAR PRADESH 201301
-            </p>
-            <div className="policies">
-              <Link to="/PrivacyPage" preventScrollReset={false}>
-                <span>Privacy Policy</span>
-              </Link>
-              <Link to="/RefundPolicy">
-                <span>Refund and Cancellation</span>
-              </Link>
-              <Link to="/T&C">
-                <span>Terms and Conditions</span>
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className="social-handles">
-          <i
-            className="fa fa-twitter fa-4x icon-3d"
-            style={{ fontSize: "48px" }}
-          ></i>
-          <a
-            href="https://www.facebook.com/profile.php?id=61550764448476&mibextid=ZbWKwL"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i
-              className="fa fa-facebook fa-4x icon-3d"
-              style={{ fontSize: "48px" }}
-            ></i>
-          </a>
-          <a
-            href="https://instagram.com/vals.co_tech?igshid=NTc4MTIwNjQ2YQ=="
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i
-              className="fa fa-instagram fa-4x icon-3d"
-              style={{ fontSize: "48px" }}
-            ></i>
-          </a>
-          <a
-            href="https://www.linkedin.com/company/valscotech/?fbclid=PAAaZ3ATa670NzIC1DB7OLSwzO9bOqISugzSF9Bs-sWUJjBBKLuYvnkm-qUJw"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i
-              className="fa fa-linkedin fa-4x icon-3d"
-              style={{ fontSize: "48px" }}
-            ></i>
-          </a>
-        </div>
-      </div>
-    </section>
-  );
-};
+        const { name, email, num, company } = req.body;
 
-export default Footer;
+        const Client = {
+            from: "connect@valscotech.com",
+            to: email,
+            subject: "Form Submitted Successfully",
+            text: `Thank You for contacting us, We will reply to you shortly!`
+        }
+
+        const Admin = {
+            from: "connect@valscotech.com",
+            to: "connect@valscotech.com",
+            subject: "Contact Form Submitted",
+            text: `By ${name}, ${email}, ${num}, ${company} `
+        }
+
+        const optArray = [Client, Admin];
+
+        // Use map to create an array of promises
+        const emailPromises = optArray.map(option => {
+            return new Promise((resolve, reject) => {
+                transporter.sendMail(option, (err, info) => {
+                    if (err) {
+                        console.log(err);
+                        reject(err);
+                    } else {
+                        console.log(`Message sent successfully to ${option.to}`);
+                        resolve(info);
+                    }
+                });
+            });
+        });
+
+        // Wait for all promises to resolve using Promise.all
+        await Promise.all(emailPromises);
+
+        console.log("All messages sent successfully!");
+        res.status(200).send("Emails sent successfully!");
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("An Error Occurred!");
+    }
+});
+
+
+app.listen(port, () => {
+    console.log(`the application has started successfully on localhost: http://localhost:${port}`);
+})
