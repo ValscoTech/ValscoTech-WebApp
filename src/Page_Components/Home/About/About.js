@@ -86,7 +86,7 @@ const About = () => {
             <p>
               Sanidhya Agarwal, our Managing Director, has amazing leadership
               qualities and a very advanced and holistic vision for Valsco. With
-              his keen eye for detall and strive for perfection.
+              his keen eye for detail and striving for perfection.
             </p>
           </div>
         </div>
