@@ -4,7 +4,7 @@ import { createDoc } from "../../Firebase_Config/firebaseConfig";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const backendURL = "https://valscobackend.onrender.com";
+const backendURL = "https://valscowebsite.onrender.com";
 // const backendURL = "http://localhost:5000";
 const Footer = () => {
   const [newContact, setNewContact] = useState({
