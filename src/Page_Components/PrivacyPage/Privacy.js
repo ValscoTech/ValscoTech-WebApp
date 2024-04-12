@@ -573,7 +573,7 @@ const PrivacyPage = () => {
           </p>
           <p classname="para">
             <span>Valsco Technology Pvt. Ltd.</span>
-            <span>J-3 SHAHABDI ENCLAVE</span>
+            <span>J-3 SHATABDI ENCLAVE</span>
             <span>NOIDA, UTTAR PRADESH 201301 India</span>
           </p>
         </section>
