@@ -161,7 +161,7 @@ const Footer = () => {
               id="formSubmitButton"
               disabled={isValid}
             >
-              Click to send your message
+              Click to Send your Message
             </button>
           </div>
         </form>
