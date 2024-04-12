@@ -9,7 +9,7 @@ import Loader from "../Loader/Loader";
 
 const backendURL = "https://mailing-backend.onrender.com";
 // const backendURL = "https://valscobackend.onrender.com";
-// const backendURL = "http://localhost:5000";
+
 const Footer = () => {
   const [newContact, setNewContact] = useState({
     name: "",
