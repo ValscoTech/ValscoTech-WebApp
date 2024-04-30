@@ -110,7 +110,7 @@ const RegistrationForm = ({ page_data }) => {
   // };
 
   const scriptUrl =
-    "https://script.google.com/macros/s/AKfycbzTF1yQ2TmTfWc9IR2w2pjq6xtGHhqVIamd8IyPNAYtnoYAGpsM5-y2zQS0D-0TbIkjtA/exec";
+    "https://script.google.com/macros/s/AKfycbxRs0TBU2v9IwBGlFCqoU6e1umgglxO83PAmPa-uYlBu6tLe8sBWLxZpeokyzntZow/exec";
   // const scriptUrl =
   //   "https://script.google.com/macros/s/AKfycbxojnSqIbdvfVxUIjsn0hWSY6u-DacL78zDBkQJxqOzsvRf8Wf1WCMjlswbJF33Rag/exec";
 
